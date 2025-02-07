@@ -1,0 +1,367 @@
+A) GenServer # topic
+	1. Implement and test a gen_server to simulate a simple bank account. The server should:
+	   - Handle requests to deposit money.
+	   - Withdraw money, ensuring sufficient balance is available.
+	   - Provide the current balance on request.
+
+	2. Create and test a gen_server that tracks an online store inventory. The server should:
+	   - Add items to the inventory.
+	   - Remove items when sold, ensuring stock is sufficient.
+	   - Check if specific items are available.
+
+	3. Write and test a gen_server for a message queue system. The server should:
+	   - Handle enqueueing of messages.
+	   - Retrieve and dequeue the next message.
+	   - Provide a way to clear the queue.
+
+	4. Design and test a gen_server that acts as a countdown timer. It should:
+	   - Start a countdown from a specified duration.
+	   - Notify the client when the countdown completes.
+	   - Support pausing, resuming, and resetting the timer.
+
+	5. Build and test a gen_server to manage a to-do list. The server should:
+	   - Add new tasks to the list.
+	   - Mark tasks as completed or remove them.
+	   - List all tasks along with their completion status.
+
+	6. Create and test a gen_server to log events. The server should:
+	   - Save events along with timestamps.
+	   - Retrieve logs within a specific timeframe.
+	   - Provide a way to clear all logs.
+
+	7. Write and test a gen_server to manage active users in a chat application. The server should:
+	   - Add users when they log in.
+	   - Remove users upon logout.
+	   - Provide a list of all currently active users.
+
+	8. Implement and test a gen_server for a library system. The server should:
+	   - Allow adding and removing books from the catalog.
+	   - Borrow books, ensuring they are available.
+	   - Return borrowed books and update their status.
+
+	9. Design and test a gen_server for API request rate limiting. It should:
+	   - Track the number of requests made by each user.
+	   - Enforce a limit (e.g., 100 requests per minute).
+	   - Reset the count periodically as per the rate-limiting window.
+
+	10. Build and test a gen_server that acts as a simple calculator. The server should:
+	    - Accept arithmetic expressions (e.g., "10 + 5 * 3").
+	    - Evaluate expressions and return results.
+	    - Log all calculations and provide the logs on request.
+
+	11. Create and test a gen_server to manage user sessions. The server should:
+	    - Start sessions for users with unique session IDs.
+	    - Expire sessions after a predefined time.
+	    - Allow manual termination of sessions.
+
+	12. Write and test a gen_server for monitoring a sensor network. The server should:
+	    - Collect readings from various sensors.
+	    - Retrieve the latest reading from any sensor.
+	    - Trigger alerts if readings exceed critical thresholds.
+
+	13. Implement and test a gen_server for a restaurant reservation system. It should:
+	    - Add reservations with a date, time, and party size.
+	    - Cancel specific reservations.
+	    - List reservations for a specific date or time period.
+
+	14. Build and test a gen_server for a note-taking application. The server should:
+	    - Save new notes with unique identifiers.
+	    - Edit existing notes.
+	    - Retrieve all notes or search notes by keywords.
+
+	15. Create and test a gen_server to track high scores in a game. The server should:
+	    - Add scores for players.
+	    - Retrieve the top N scores.
+	    - Clear the score table on demand.
+
+	16. Write and test a gen_server to manage a temperature control system. It should:
+	    - Collect temperature readings.
+	    - Calculate and return the average temperature.
+	    - Notify if the temperature exceeds or falls below safe limits.
+
+	17. Design and test a gen_server that functions as a task scheduler. It should:
+	    - Schedule tasks to execute at specific times.
+	    - Notify clients when a task's execution time arrives.
+	    - Allow rescheduling or canceling tasks.
+
+	18. Implement and test a gen_server to simulate a vending machine. It should:
+	    - Track items, prices, and stock levels.
+	    - Process purchase requests, ensuring correct payment and stock.
+	    - Restock items and update prices.
+
+	19. Create and test a gen_server for a ticketing system. The server should:
+	    - Create and assign unique IDs to tickets.
+	    - Retrieve ticket details by ID.
+	    - Mark tickets as resolved.
+
+	20. Write and test a gen_server for a multi-account banking system. The server should:
+	    - Allow creating multiple accounts with unique IDs.
+	    - Transfer funds between accounts, ensuring valid balances.
+	    - Retrieve account details, including transaction history.
+
+B) GenStatem # topic
+	1. Implement and test a gen_statem for a simple traffic light system. The state machine should:
+	   - Transition between states: Red, Green, and Yellow.
+	   - Enforce proper timing for each state (e.g., 30 seconds for Green, 5 seconds for Yellow).
+	   - Allow emergency override to immediately switch to Red.
+
+	2. Create and test a gen_statem for an elevator controller. The state machine should:
+	   - Manage states such as Idle, Moving Up, and Moving Down.
+	   - Respond to requests from users to go to specific floors.
+	   - Handle emergency stop requests.
+
+	3. Write and test a gen_statem to simulate a vending machine. The state machine should:
+	   - Transition between states: Idle, Selecting Item, Processing Payment, and Dispensing.
+	   - Accept coins and validate payment.
+	   - Return to Idle after dispensing an item or canceling an order.
+
+	4. Design and test a gen_statem for a door locking system. It should:
+	   - Have states: Locked, Unlocked, and Alarm.
+	   - Transition to Alarm if an incorrect code is entered three times.
+	   - Transition to Locked or Unlocked based on correct input.
+
+	5. Build and test a gen_statem to model a thermostat system. The state machine should:
+	   - Transition between Cooling, Heating, and Idle based on temperature thresholds.
+	   - Adjust setpoints dynamically based on user input.
+	   - Provide alerts if the temperature goes out of range.
+
+	6. Create and test a gen_statem to manage a parking lot gate. It should:
+	   - Handle states like Gate Open, Gate Closed, and Gate Opening/Closing.
+	   - Transition based on sensor input (e.g., car detected).
+	   - Enforce rules, such as not opening if the lot is full.
+
+	7. Write and test a gen_statem to simulate a music player. The state machine should:
+	   - Handle states: Playing, Paused, and Stopped.
+	   - Transition based on user inputs (play, pause, stop).
+	   - Support track skipping and resuming.
+
+	8. Implement and test a gen_statem for an online shopping cart. It should:
+	   - Handle states like Browsing, Adding to Cart, Checking Out, and Order Placed.
+	   - Transition back to Browsing after canceling or completing checkout.
+	   - Expire the cart if idle for too long.
+
+	9. Design and test a gen_statem for a chatbot interaction flow. The state machine should:
+	   - Manage conversation states like Greeting, Asking Question, and Providing Response.
+	   - Transition based on user inputs and conversation context.
+	   - Handle fallback states for unrecognized input.
+
+	10. Build and test a gen_statem to simulate a toll booth system. The state machine should:
+	    - Handle states like Vehicle Detected, Processing Payment, and Gate Open.
+	    - Transition to Gate Open only after successful payment.
+	    - Return to Idle when no vehicle is present.
+
+	11. Create and test a gen_statem for a bank ATM. The state machine should:
+	    - Handle states: Idle, Card Inserted, Authenticating, and Transaction.
+	    - Manage transitions for withdrawing cash, checking balance, or exiting.
+	    - Return to Idle if the card is removed or after a timeout.
+
+	12. Write and test a gen_statem for a hotel room occupancy system. It should:
+	    - Track states like Room Vacant, Room Occupied, and Cleaning.
+	    - Transition based on check-in, check-out, and housekeeping actions.
+	    - Enforce rules, such as no check-in during Cleaning.
+
+	13. Implement and test a gen_statem for a ticket booking system. It should:
+	    - Manage states like Selecting Tickets, Payment, and Confirmation.
+	    - Transition back to Idle after confirming or canceling a booking.
+	    - Handle session expiration after inactivity.
+
+	14. Design and test a gen_statem for a warehouse conveyor system. The state machine should:
+	    - Handle states: Idle, Moving Forward, and Paused.
+	    - Transition based on item placement or blockage detection.
+	    - Stop the system if an error occurs.
+
+	15. Build and test a gen_statem to model a car ignition system. It should:
+	    - Have states: Off, Accessory, Ignition, and Running.
+	    - Transition based on key position or start button input.
+	    - Enforce safety checks, such as requiring the brake to start.
+
+	16. Create and test a gen_statem for a multiplayer game lobby. It should:
+	    - Handle states like Waiting for Players, Starting Game, and In Game.
+	    - Transition based on player actions, such as joining or leaving.
+	    - Automatically start the game when enough players are ready.
+
+	17. Write and test a gen_statem to control a washing machine. It should:
+	    - Transition between states: Idle, Washing, Rinsing, and Spinning.
+	    - Enforce timing for each cycle.
+	    - Handle emergency stop requests.
+
+	18. Implement and test a gen_statem for a traffic congestion control system. It should:
+	    - Handle states like Normal Flow, Congestion Detected, and Congestion Cleared.
+	    - Transition based on real-time traffic data.
+	    - Notify authorities during high congestion states.
+
+	19. Design and test a gen_statem for a drone operation system. It should:
+	    - Manage states like Takeoff, Hovering, Moving, and Landing.
+	    - Transition based on user commands or battery status.
+	    - Handle emergency transitions like returning to base.
+
+	20. Build and test a gen_statem to simulate a payment gateway. It should:
+	    - Manage states like Initiating Payment, Processing, and Completed.
+	    - Transition to Error on failure.
+	    - Support retrying or canceling transactions.
+
+C) GenEvent and Event Manager # Topic
+	1. Build and test a gen_event system to log application events. It should:
+	    - Use a handler to write logs to the console.
+	    - Include another handler to store logs in a file.
+	    - Dynamically allow adding or removing handlers.
+
+	2. Implement a gen_event manager to filter sensitive events. It should:
+	    - Detect events containing sensitive information (e.g., keywords).
+	    - Stop such events from being broadcast to other handlers.
+	    - Allow whitelisted events to pass through.
+
+	3. Create a gen_event system to manage multiple handlers. It should:
+	    - Broadcast a single incoming event to all active handlers.
+	    - Support dynamically changing the list of handlers.
+
+	4. Write and test a handler for a gen_event manager that tracks event counts. It should:
+	    - Maintain a count of processed events in its state.
+	    - Respond to a custom "report_count" event with the current count.
+
+	5. Design a gen_event manager to process two types of events. It should:
+	    - Handle "INFO" events by logging to the console.
+	    - Handle "ERROR" events by sending alerts to an external process.
+
+	6. Develop a gen_event handler that transforms events. It should:
+	    - Modify incoming events (e.g., append a timestamp).
+	    - Forward transformed events to the next handler in the pipeline.
+
+	7. Build a system to dynamically add and remove handlers in a running gen_event manager. It should:
+	    - Add a new handler on demand.
+	    - Remove an existing handler when requested.
+
+	8. Write a test suite for a gen_event manager. It should:
+	    - Verify that events are distributed to all registered handlers.
+	    - Ensure events are not sent to removed handlers.
+
+	9. Create a crash-prone handler in a gen_event system. It should:
+	    - Simulate crashes when specific events are received.
+	    - Test the resilience of the event manager during handler crashes.
+
+	10. Build a gen_event handler for stateful processing of events. It should:
+	    - Maintain and update state for each event.
+	    - Reset state when a "reset_state" event is received.
+
+	11. Write a gen_event handler to notify external processes. It should:
+	    - Detect specific events (e.g., "alert").
+	    - Send a message to a monitoring process.
+
+	12. Design a multi-handler gen_event system. It should:
+	    - Enable handlers to communicate indirectly via the manager.
+	    - Test scenarios where one handler's actions affect another handler.
+
+	13. Build and test a gen_event system using `swap_handler/3`. It should:
+	    - Replace an existing handler dynamically.
+	    - Transfer state from the old handler to the new handler.
+
+	14. Implement a gen_event logging system. It should:
+	    - Use one handler to log events to a file.
+	    - Include a second handler to filter logs by severity (e.g., DEBUG, ERROR).
+
+	15. Write a gen_event handler that integrates with an external event source. It should:
+	    - Subscribe to an external event producer.
+	    - Forward incoming external events to the gen_event manager.
+
+	16. Develop a prioritized gen_event manager. It should:
+	    - Broadcast events to handlers in a defined priority order.
+	    - Allow modifying the priority dynamically.
+
+	17. Build a gen_event handler for batching events. It should:
+	    - Collect events in batches.
+	    - Process the batch after a certain number of events or a timeout.
+
+	18. Write a gen_event system to load handlers at runtime. It should:
+	    - Dynamically load handler modules from disk.
+	    - Support reloading updated handler modules without restarting.
+
+	19. Implement a gen_event handler to persist events. It should:
+	    - Save processed events to a database or file storage.
+	    - Handle failures during persistence gracefully.
+
+	20. Create and test a gen_event system for event summarization. It should:
+	    - Collect statistics about received events (e.g., type counts).
+	    - Respond to a "summarize" event with the collected statistics.
+
+D) Supervisors # Topic
+	1. Build and test a simple supervisor. It should:
+	    - Start one child process of a given module.
+	    - Restart the child on crash with a permanent restart strategy.
+
+	2. Implement a supervisor for a worker pool. It should:
+	    - Start multiple identical worker processes.
+	    - Use the `:one_for_one` strategy.
+
+	3. Design a supervisor tree. It should:
+	    - Have a supervisor managing two children.
+	    - Include a second-level supervisor for one of the children.
+
+	4. Create a supervisor to manage transient processes. It should:
+	    - Use the `:rest_for_one` strategy.
+	    - Restart only processes after the failed one in the child list.
+
+	5. Build a supervisor for a dynamically added children scenario. It should:
+	    - Start without any children.
+	    - Allow dynamically adding workers using `Supervisor.start_child/2`.
+
+	6. Develop a supervisor with a `:simple_one_for_one` strategy. It should:
+	    - Manage identical child processes.
+	    - Start new processes on demand.
+
+	7. Write tests for a supervisor managing stateful workers. It should:
+	    - Confirm workers are restarted with a fresh state.
+	    - Ensure supervisors handle repeated worker crashes.
+
+	8. Create a supervisor to manage a child with dependent services. It should:
+	    - Start a main process and two supporting processes.
+	    - Ensure the supporting processes are terminated before the main process.
+
+	9. Build and test a hierarchical supervision tree. It should:
+	    - Include a root supervisor with `:one_for_all` strategy.
+	    - Manage two sub-supervisors, each with its own children.
+
+	10. Implement a supervisor to manage a rate-limited worker. It should:
+	    - Use a `:temporary` child specification.
+	    - Ensure workers are not restarted after normal termination.
+
+	11. Write a supervisor with a custom child specification. It should:
+	    - Include a worker that receives specific arguments at startup.
+	    - Allow updating the child specification dynamically.
+
+	12. Design a supervisor to monitor crash frequency. It should:
+	    - Use `max_restarts` and `max_seconds` to limit restarts.
+	    - Test what happens when restart limits are exceeded.
+
+	13. Build a supervisor for a system with mixed child types. It should:
+	    - Manage a mix of workers and supervisors.
+	    - Ensure the supervision strategy applies to all children.
+
+	14. Implement a supervisor for a lifecycle test. It should:
+	    - Verify that children start in the correct order.
+	    - Ensure all children terminate cleanly during supervisor shutdown.
+
+	15. Write a supervisor to dynamically scale workers. It should:
+	    - Start with one worker.
+	    - Add or remove workers based on external requests.
+
+	16. Create a supervisor tree to manage a gen_server and a gen_event. It should:
+	    - Start the gen_event before the gen_server.
+	    - Terminate the gen_event last during shutdown.
+
+	17. Build a supervisor with children that depend on each other. It should:
+	    - Use `:one_for_all` to restart all children when one crashes.
+	    - Test what happens when one child process fails.
+
+	18. Write a supervisor for delayed startup. It should:
+	    - Start one child immediately.
+	    - Start another child after a specified delay.
+
+	19. Design a supervisor to manage a worker pool with varying worker types. It should:
+	    - Use `:simple_one_for_one` for workers started with different arguments.
+	    - Manage workers of different modules dynamically.
+
+	20. Implement a supervisor to monitor uptime of children. It should:
+	    - Restart children after a crash.
+	    - Log uptime statistics when each child terminates.
+
+

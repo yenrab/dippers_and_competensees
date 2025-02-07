@@ -1,0 +1,315 @@
+Queue # Topic
+
+	Implement a functional queue using the following structure: `{list, list}`. The queue should support two lists: one for the front elements and another for the rear elements. Implement the following functions:
+
+	1. `empty(queue)`: Checks if the queue is empty.
+	   - Input: A queue.
+	   - Output: `true` if the queue is empty, `false` otherwise.
+
+	2. `enqueue(queue, element)`: Adds an element to the rear of the queue.
+	   - Input: A queue and an element.
+	   - Output: A new queue with the element added.
+
+	3. `dequeue(queue)`: Removes the first element from the queue.
+	   - Input: A queue.
+	   - Output: A new queue with the first element removed.
+
+	4. `head(queue)`: Retrieves the first element of the queue without removing it.
+	   - Input: A queue.
+	   - Output: The first element or `nil` if the queue is empty.
+
+	5. `tail(queue)`: Retrieves the last element of the queue without removing it.
+	   - Input: A queue.
+	   - Output: The last element or `nil` if the queue is empty.
+
+	6. `toList(queue)`: Converts the queue into a single list of elements.
+	   - Input: A queue.
+	   - Output: A list of elements in order.
+
+	7. `fromList(list)`: Converts a list of elements into a queue.
+	   - Input: A list of elements.
+	   - Output: A queue.
+
+	**Task Instructions**:
+	- Use functional programming principles to implement these functions.
+	- Write tests to validate the correctness of each function.
+	- Ensure the queue adheres to the FIFO (First-In-First-Out) principle.
+	- Use recursive definitions wherever appropriate.
+	- Provide a test suite with multiple scenarios, including edge cases, such as:
+	  - Enqueuing and dequeuing elements in an empty queue.
+	  - Accessing the head and tail of the queue at various stages.
+	  - Converting between lists and queues.
+	  - Combining multiple operations, such as enqueue and dequeue, sequentially.
+
+	**Challenge Extension (Optional)**:
+	- Implement a `reverse(queue)` function that reverses the order of elements in the queue.
+	- Implement a `length(queue)` function to count the elements in the queue.
+
+B) Deque # Topic
+	Comprehensive Deque Implementation Task
+
+	Implement a functional deque (double-ended queue) using the structure `{list, list}`. The deque should consist of two lists: one for the front elements and another for the rear elements. Implement the following functions:
+
+	1. `empty(deque)`: Checks if the deque is empty.
+	   - Input: A deque.
+	   - Output: `true` if the deque is empty, `false` otherwise.
+
+	2. `enqueue(deque, element)`: Adds an element to the rear of the deque.
+	   - Input: A deque and an element.
+	   - Output: A new deque with the element added to the rear.
+
+	3. `enqueue_front(deque, element)`: Adds an element to the front of the deque.
+	   - Input: A deque and an element.
+	   - Output: A new deque with the element added to the front.
+
+	4. `dequeue(deque)`: Removes the first element from the deque.
+	   - Input: A deque.
+	   - Output: A new deque with the first element removed.
+
+	5. `dequeue_back(deque)`: Removes the last element from the deque.
+	   - Input: A deque.
+	   - Output: A new deque with the last element removed.
+
+	6. `head(deque)`: Retrieves the first element of the deque without removing it.
+	   - Input: A deque.
+	   - Output: The first element or `nil` if the deque is empty.
+
+	7. `tail(deque)`: Retrieves the last element of the deque without removing it.
+	   - Input: A deque.
+	   - Output: The last element or `nil` if the deque is empty.
+
+	8. `toList(deque)`: Converts the deque into a single list of elements.
+	   - Input: A deque.
+	   - Output: A list of elements in order.
+
+	9. `fromList(list)`: Converts a list of elements into a deque.
+	   - Input: A list of elements.
+	   - Output: A deque.
+
+	**Task Instructions**:
+	- Use functional programming principles to implement these functions.
+	- Write tests to validate the correctness of each function.
+	- Ensure the deque supports operations efficiently on both ends.
+	- Use recursive definitions wherever appropriate.
+	- Provide a test suite with multiple scenarios, including edge cases, such as:
+	  - Enqueuing and dequeuing elements from both ends in an empty deque.
+	  - Accessing the head and tail of the deque at various stages.
+	  - Converting between lists and deques.
+	  - Combining multiple operations, such as enqueue, dequeue, and enqueue_front, sequentially.
+
+	**Challenge Extension (Optional)**:
+	- Implement a `reverse(deque)` function that reverses the order of elements in the deque.
+	- Implement a `length(deque)` function to count the elements in the deque.
+	- Write a `merge(deque1, deque2)` function that combines two deques into one.
+
+	**Example Use Case**:
+	- Start with an empty deque, enqueue elements to both ends, retrieve the head and tail, and then dequeue elements from both ends while verifying correctness at each step.
+
+C) Binary Search Tree # Topic
+	Comprehensive Binary Search Tree (BST) Implementation Task
+
+	Implement a Binary Search Tree (BST) using the structure `{value, next_left, next_right}`. Each node consists of a value and references to the left and right subtrees. Implement the following functions:
+
+	1. `empty(bst)`: Checks if the BST is empty.
+	   - Input: A BST.
+	   - Output: `true` if the BST is empty, `false` otherwise.
+
+	2. `add(bst, element)`: Adds an element to the BST while maintaining its properties.
+	   - Input: A BST and an element.
+	   - Output: A new BST with the element added.
+
+	3. `contains(bst, element)`: Checks if a value exists in the BST.
+	   - Input: A BST and a value.
+	   - Output: `true` if the value is found, `false` otherwise.
+
+	4. `remove(bst, element)`: Removes an element from the BST while maintaining its properties.
+	   - Input: A BST and an element.
+	   - Output: A new BST with the element removed.
+
+	5. `min(bst)`: Finds the smallest element in the BST.
+	   - Input: A BST.
+	   - Output: The smallest element or `nil` if the tree is empty.
+
+	6. `max(bst)`: Finds the largest element in the BST.
+	   - Input: A BST.
+	   - Output: The largest element or `nil` if the tree is empty.
+
+	7. `toList(bst)`: Converts the BST to a sorted list (in-order traversal).
+	   - Input: A BST.
+	   - Output: A list of elements in sorted order.
+
+	8. `fromList(list)`: Constructs a BST from a list of elements.
+	   - Input: A list of elements.
+	   - Output: A BST.
+
+	9. `height(bst)`: Computes the height of the BST.
+	   - Input: A BST.
+	   - Output: The height as an integer.
+
+	10. `isBalanced(bst)`: Checks if the BST is balanced (difference in height between left and right subtrees of any node is at most 1).
+	    - Input: A BST.
+	    - Output: `true` if the tree is balanced, `false` otherwise.
+
+	**Task Instructions**:
+	- Use functional programming principles to implement these functions.
+	- Write tests to validate the correctness of each function.
+	- Ensure the BST adheres to its properties:
+	  - All values in the left subtree of a node are less than the node’s value.
+	  - All values in the right subtree of a node are greater than the node’s value.
+	- Provide a test suite with various scenarios, including edge cases such as:
+	  - Adding to an empty BST.
+	  - Removing the root, leaf nodes, and nodes with one or two children.
+	  - Searching for elements at different depths.
+	  - Converting between lists and BSTs.
+
+	**Challenge Extension (Optional)**:
+	- Implement a `map(bst, function)` that applies a function to all elements in the BST, returning a new tree.
+	- Implement a `merge(bst1, bst2)` function to combine two BSTs into one.
+	- Write a `countNodes(bst)` function to count the total number of nodes in the BST.
+
+	**Example Use Case**:
+	- Start with an empty BST, add elements one by one, check if specific elements exist, remove elements, and finally convert the BST to a sorted list.
+
+
+D) Red-Black Tree # Topic
+	Comprehensive Red-Black Tree (RBT) Implementation Task
+
+	Implement a Red-Black Tree (RBT) using the structure `{color, value, next_left, next_right}`, where:
+	- `color` is either `red` or `black`.
+	- `value` is the element stored in the node.
+	- `next_left` and `next_right` are the left and right subtrees, respectively.
+
+	**Functional Requirements**:
+	1. `empty(rbt)`: Checks if the RBT is empty.
+	   - Input: An RBT.
+	   - Output: `true` if the tree is empty, `false` otherwise.
+
+	2. `add(rbt, element)`: Adds an element to the RBT while maintaining Red-Black Tree properties.
+	   - Input: An RBT and an element.
+	   - Output: A new RBT with the element added.
+
+	3. `contains(rbt, element)`: Checks if a value exists in the RBT.
+	   - Input: An RBT and a value.
+	   - Output: `true` if the value is found, `false` otherwise.
+
+	4. `remove(rbt, element)`: Removes an element from the RBT while maintaining its properties.
+	   - Input: An RBT and an element.
+	   - Output: A new RBT with the element removed.
+
+	5. `min(rbt)`: Finds the smallest element in the RBT.
+	   - Input: An RBT.
+	   - Output: The smallest element or `nil` if the tree is empty.
+
+	6. `max(rbt)`: Finds the largest element in the RBT.
+	   - Input: An RBT.
+	   - Output: The largest element or `nil` if the tree is empty.
+
+	7. `toList(rbt)`: Converts the RBT to a sorted list (in-order traversal).
+	   - Input: An RBT.
+	   - Output: A list of elements in sorted order.
+
+	8. `fromList(list)`: Constructs an RBT from a list of elements.
+	   - Input: A list of elements.
+	   - Output: An RBT.
+
+	**Red-Black Tree Properties**:
+	- Every node is either `red` or `black`.
+	- The root node is always `black`.
+	- Red nodes cannot have red children (no two consecutive red nodes).
+	- Every path from a node to its descendant `nil` nodes contains the same number of black nodes (black-height consistency).
+
+	**Task Instructions**:
+	1. Implement the above functions while maintaining the RBT properties.
+	2. Use recursive definitions wherever appropriate.
+	3. Write tests to validate the correctness of each function and the adherence to RBT properties.
+	4. Handle edge cases, such as:
+	   - Adding to an empty tree.
+	   - Adding duplicate elements.
+	   - Removing nodes with one or two children.
+	   - Handling rebalancing and recoloring during `add` and `remove` operations.
+
+	**Challenge Extension (Optional)**:
+	1. Implement a `map(rbt, function)` that applies a function to each element in the RBT, producing a new tree.
+	2. Write a `merge(rbt1, rbt2)` function to combine two RBTs into one while maintaining the RBT properties.
+	3. Implement a `blackHeight(rbt)` function to calculate the black-height of the tree.
+	4. Write a function `validateRBT(rbt)` to ensure that all Red-Black Tree properties are satisfied.
+
+	**Example Use Case**:
+	- Start with an empty RBT and perform the following:
+	  1. Add elements in random order.
+	  2. Check for the presence of specific elements using `contains`.
+	  3. Remove elements and verify tree structure.
+	  4. Convert the RBT to a sorted list using `toList`.
+
+	**Hint for Learners**:
+	Focus on implementing the following helper functions during `add`:
+	1. `balance(rbt)`: Balances the tree after adding a node by handling violations of RBT properties.
+	2. `rotateLeft(node)` and `rotateRight(node)`: Used for tree rotation during balancing.
+	3. `recolor(rbt)`: Recolors nodes to restore RBT properties.
+
+E) Trie # Topic
+	Comprehensive Trie Implementation Task
+
+	Implement a Trie data structure where each node is represented as a map with key-value pairs. The keys represent the edges, and the values are the child nodes (sub-tries). Use a special marker key, `end`, to indicate the end of a word or sequence.
+
+	**Functional Requirements**:
+	1. `empty(trie)`: Checks if the Trie is empty.
+	   - Input: A Trie.
+	   - Output: `true` if the Trie is empty, `false` otherwise.
+
+	2. `add(trie, sequence)`: Adds a sequence (e.g., a string or list) to the Trie.
+	   - Input: A Trie and a sequence.
+	   - Output: A new Trie with the sequence added.
+
+	3. `contains(trie, sequence)`: Checks if a sequence exists in the Trie.
+	   - Input: A Trie and a sequence.
+	   - Output: `true` if the sequence is found, `false` otherwise.
+
+	4. `remove(trie, sequence)`: Removes a sequence from the Trie.
+	   - Input: A Trie and a sequence.
+	   - Output: A new Trie with the sequence removed.
+
+	5. `prefix(trie, prefix)`: Finds all sequences in the Trie that start with the given prefix.
+	   - Input: A Trie and a prefix.
+	   - Output: A list of sequences that start with the prefix.
+
+	6. `toList(trie)`: Converts the Trie into a list of all stored sequences.
+	   - Input: A Trie.
+	   - Output: A list of all sequences stored in the Trie.
+
+	7. `fromList(list)`: Constructs a Trie from a list of sequences.
+	   - Input: A list of sequences.
+	   - Output: A Trie.
+
+	**Task Instructions**:
+	1. Implement the above functions using functional programming principles.
+	2. Use recursive definitions wherever appropriate.
+	3. Write tests to validate the correctness of each function.
+	4. Handle edge cases, such as:
+	   - Adding duplicate sequences.
+	   - Removing sequences that are prefixes of others.
+	   - Handling empty sequences or prefixes.
+	5. Optimize `prefix` and `contains` for efficiency, ensuring minimal traversal of the Trie.
+
+	**Trie Properties**:
+	- The Trie is structured to minimize redundancy: shared prefixes are represented as shared paths in the tree.
+	- The `end` marker signifies the completion of a sequence.
+
+	**Challenge Extension (Optional)**:
+	1. Implement a `map(trie, function)` that applies a function to each sequence in the Trie and returns a new Trie.
+	2. Write a `merge(trie1, trie2)` function to combine two Tries into one, preserving all sequences.
+	3. Add a `removePrefix(trie, prefix)` function that removes all sequences beginning with a specific prefix.
+	4. Implement a `size(trie)` function that counts the total number of sequences in the Trie.
+
+	**Example Use Case**:
+	- Start with an empty Trie and perform the following:
+	  1. Add sequences (e.g., ["cat", "car", "dog", "cart"]).
+	  2. Check for specific sequences using `contains`.
+	  3. Retrieve all sequences with a common prefix using `prefix`.
+	  4. Convert the Trie to a list and verify correctness.
+	  5. Remove a sequence and check the updated structure.
+
+	**Hint for Learners**:
+	Focus on recursive processing of sequences:
+	- For `add` and `contains`, process one element at a time, traversing or creating nodes as needed.
+	- For `remove`, ensure nodes are pruned only if they are no longer part of any other sequence.

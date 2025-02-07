@@ -1,0 +1,172 @@
+A) ls # Topic
+	1. List all files and directories in the current directory.
+	2. List all files, including hidden ones, in the current directory.
+	3. List all files in the current directory, with details like permissions, owner, size, and date modified.
+	4. List all files, including hidden ones, with detailed information.
+	5. List only directories in the current directory.
+	6. Display files in human-readable sizes (e.g., KB, MB) along with detailed information.
+	7. Combine options to show hidden files in human-readable sizes with details.
+	8. List only files ending with `.txt` in the current directory.
+	9. List all files starting with the letter `a` in the current directory.
+	10. Use `ls` to list files in a specific directory, e.g., `/etc`.
+	11. List all hidden files starting with a dot (`.`).
+	12. Recursively list all files and directories in the current directory.
+	13. Use `ls` with a path to list contents of a directory inside your home directory, e.g., `~/Documents`.
+	15. Use `ls` to list the contents of two directories at the same time, e.g., `/bin` and `/usr/bin`.
+
+B) pwd # Topic
+	1. Display the current working directory.
+	2. Use `pwd` to confirm your location after navigating to a new directory.
+	3. Use `pwd` to print the full path of the current directory.
+	4. Verify the absolute path to your home directory using `pwd`.
+	5. Combine `pwd` with a navigation command to confirm the new directory path.
+	6. Use `pwd` after creating a new directory and moving into it.
+	7. Check the working directory after using `cd ..` to move up one level.
+	8. Use `pwd` to verify the current directory after using an absolute path to change directories.
+	9. Confirm your directory location after navigating to a relative path.
+	10. Display the present working directory and compare it with the output of `ls`.
+	11. Use `pwd` to check the directory after running a command like `cd /tmp`.
+	12. Verify the symbolic link path of the current directory with `pwd -P`.
+	13. Use `pwd` to check your directory after navigating deep into a multi-level path.
+
+C) mkdir # Topic
+	1. Create a new directory named `testdir` in the current directory.
+	2. Create multiple directories named `dir1`, `dir2`, and `dir3` at once.
+	3. Create a nested directory structure like `parent/child/grandchild` in one command.
+	4. Attempt to create a directory that already exists and observe the result.
+	5. Create a directory inside another directory using a relative path.
+	6. Create a directory in the root directory (e.g., `/example`) and observe any permission errors.
+	7. Create a directory with a name containing spaces (e.g., `My Documents`).
+	8. Create directories named after the days of the week (e.g., `Monday`, `Tuesday`, etc.).
+	9. Create a directory at an absolute path, such as `/tmp/newdir`.
+	10. Use `mkdir` to create a hidden directory (e.g., `.hidden`).
+	11. Use `mkdir` with `-v` to display a message confirming the creation of each directory.
+	12. Create directories recursively with `-p`, starting from a non-existent parent (e.g., `projects/2024/January`).
+
+D) cd # Topic
+	1. Change to the home directory using `cd`.
+	2. Navigate to a directory named `Documents` located in the current directory.
+	3. Move up one level in the directory structure.
+	4. Use `cd` to move to an absolute path, such as `/etc`.
+	5. Navigate to a directory using a relative path, such as `../siblingdir`.
+	6. Change to the root directory.
+	7. Navigate to the previous directory you were in using `cd -`.
+	8. Use `cd` to enter a nested directory path, such as `project/src/tests`.
+	9. Navigate into a directory with spaces in its name (e.g., `My Documents`).
+	10. Use `cd` to move into a hidden directory, such as `.config`.
+	11. Attempt to navigate to a non-existent directory and observe the error message.
+	12. Use `cd` with tab completion to navigate to a partially typed directory name.
+	13. Move into the directory `/tmp` and verify your location with `pwd`.
+	14. Attempt to navigate into a directory without the required permissions.
+
+E) tail # Topic
+	1. Use `tail` to display the last 10 lines of a file named `logfile.txt`.
+	2. Display the last 20 lines of a file using `tail`.
+	3. Use `tail` to continuously monitor updates to a file, such as `system.log`.
+	4. Use `tail` to display the last 10 lines of a file located in a different directory, such as `/var/log/syslog`.
+	5. Use `tail` with a file that does not exist and observe the error message.
+	6. Monitor two files simultaneously using `tail -f file1.txt file2.txt`.
+	7. Use `tail` with the `--pid` option to stop monitoring when a process ends.
+	8. Display the last 10 lines of a file, appending line numbers to the output.
+	9. Use `tail` with the `--bytes` option to display the last 100 bytes of a file.
+
+F) rm # Topic
+	1. Remove a single file named `test.txt`.
+	2. Remove multiple files named `file1.txt`, `file2.txt`, and `file3.txt`.
+	3. Remove a directory named `folder` if it is empty.
+	4. Remove a non-empty directory named `data` and all its contents.
+	5. Remove all `.log` files in the current directory.
+	6. Remove all files starting with `temp` in the current directory.
+	7. Remove all files in the current directory.
+	8. Remove all files in the `/tmp` directory.
+	9. Remove a hidden file named `.hiddenfile`.
+	10. Remove all hidden files in the current directory.
+	11. Remove all `.bak` files in the current directory and its subdirectories.
+	12. Remove all `.tmp` files in the current directory but ask for confirmation before each file is deleted.
+
+G) Adding Users and Groups # Topic
+	1. Add a new user named `newuser`.
+	2. Add a user named `john` with a specific home directory `/home/john_custom`.
+	3. Add a user named `developer` without creating a home directory.
+	4. Add a user named `dataanalyst` and set an initial password for them.
+	5. Create a new group named `projectteam`.
+	6. Add an existing user `alice` to a group named `projectteam`.
+	7. Add a user named `bob` to multiple groups: `developers` and `admins`.
+	8. Add a new user `student` and add them to an existing group `students` during user creation.
+	9. Remove a user `testuser` from a group named `testgroup`.
+	10. Verify which groups a user named `developer` belongs to.
+	11. Add multiple users `mike`, `jane`, and `alex` to a group named `designers`.
+
+H) Public/Private Keys # Topic
+	1. Generate a new RSA key pair using `ssh-keygen` with the default options.
+	2. Generate an RSA key pair and specify a custom filename for the key.
+	3. Generate an RSA key pair and provide a passphrase for added security.
+	4. Generate an RSA key pair without a passphrase.
+	5. Generate an RSA key pair with a custom key size, e.g., 4096 bits.
+	6. Generate an Ed25519 key pair using `ssh-keygen`.
+	7. Verify the details of an existing key pair using `ssh-keygen -l`.
+	8. Export an existing public key from a private key file using `ssh-keygen`.
+	9. Manually add a public key to a remote server's `authorized_keys` file.
+	10. Change the passphrase of an existing private key using `ssh-keygen -p`.
+	11. Test an SSH connection using a specific private key file.
+	12. List all the SSH keys stored in the `~/.ssh` directory.
+	13. Remove an old public/private key pair from the `~/.ssh` directory.
+
+I) SSH and Secure File Transfer # Topic
+	1. Connect to a remote server using `ssh` with a username and hostname.
+	2. Connect to a remote server using `ssh` and a specific public/private key pair.
+	3. Use `rsync` to transfer files from a local directory to a remote server.
+	4. Use `rsync` to synchronize files from a remote server to your local machine.
+	5. Use `rsync` to transfer files with progress and compression enabled.
+	6. Add a remote server’s host key to `~/.ssh/known_hosts` during an SSH connection.
+	7. Remove an outdated host key from `~/.ssh/known_hosts`.
+	8. Securely transfer a large file using `rsync` with resume support.
+	9. Test SSH connectivity without logging in using `ssh -T`.
+J) cat # Topic
+	1. Display the contents of a file named `example.txt`.
+	2. Display the contents of multiple files, e.g., `file1.txt` and `file2.txt`, in order.
+	3. Create a new file named `newfile.txt` by redirecting text input using `cat > newfile.txt`.
+	4. Append text to an existing file using `cat >> existingfile.txt`.
+	5. Combine two files, `file1.txt` and `file2.txt`, into a new file `merged.txt`.
+	6. Display the contents of a file with line numbers using `cat`.
+	7. Append the contents of `file1.txt` to `file2.txt`.
+	8. Show the contents of a file but make non-printable characters visible using `cat`.
+	9. Compare the outputs of two files side by side using `cat file1.txt file2.txt`.
+
+K) head # Topic
+	1. Display the first 10 lines of a file using `head`.
+	2. Show the first 5 lines of a file using `head`.
+	3. Display the first 20 lines of multiple files, e.g., `file1.txt` and `file2.txt`.
+	4. Preview the first lines of a file while ignoring any blank lines.
+	5. Use `head` to extract the first 3 lines of a file and redirect them to a new file.
+	6. Display the first 100 characters of a file using `head`.
+	7. Display the first 3 lines of all `.txt` files in the current directory using a wildcard.
+	8. Use `head` to check the start of a system log file in `/var/log`.
+
+L) touch # Topic
+	1. Create an empty file named `file1.txt`.
+	2. Create multiple empty files, e.g., `file1.txt`, `file2.txt`, and `file3.txt`.
+	3. Create a file in a specific directory, e.g., `touch /tmp/newfile.txt`.
+	4. Create multiple files with a numbered sequence, e.g., `file1`, `file2`, `file3`.
+	5. Use `touch` to create a file named `.hiddenfile`.
+	6. Create an empty file with spaces in its name using `touch "my file.txt"`.
+	7. Create a file in a directory requiring elevated privileges using `sudo touch`.
+
+M) apt # Topic
+	1. Update the local package index.
+	2. Install a package.
+	3. Install multiple packages at once.
+	4. Remove an installed package.
+	5. Search for packages.
+	6. Upgrade all installed packages.
+	7. Display detailed information about a package.
+
+N) HTTPS certificates # Topic
+	1.	Install Certbot via apt.
+	2.	Obtain a new SSL/TLS certificate (for one or multiple domains).
+	3.	Renew existing certificates (manually or automatically).
+	4.	Revoke a certificate (if it has been compromised or is no longer needed).
+	5.	List existing certificates (to check what is currently installed).
+	6.	Test auto-renewal (using the --dry-run option).
+	7.	Configure automatic renewals (e.g., through system cron jobs or timers).
+

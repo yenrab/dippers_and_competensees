@@ -1,0 +1,351 @@
+A) Monad Pattern# Topic
+
+	1. Define a unit function that wraps an integer in a monad type. Demonstrate this function with an example input.
+
+	2. Implement a bind function for a monad that transforms a wrapped value using a given lambda function.
+
+	3. Create a Maybe monad with two cases: Just (with a value) and Nothing (no value). Write a unit function for it.
+
+	4. Use the Maybe monad to safely handle division. Return Nothing if division by zero is attempted.
+
+	5. Chain multiple operations (addition, multiplication) using the Maybe monad. Ensure that Nothing is propagated correctly through the chain.
+
+	6. Implement a monad that tracks a log along with computations. Define the unit and bind functions for it.
+
+	7. Use the logging monad to add two numbers while appending a description of the operation to the log.
+
+	8. Design a monad that represents computations that may fail with an error message. Test it with both successful and failing scenarios.
+
+	9. Create a list monad to handle multiple results from a computation. Demonstrate its use with an example function that doubles each element in a list.
+
+	10. Write a chain function for monads to apply a sequence of operations on a wrapped value.
+
+	11. Combine the Maybe monad with a logging monad. Log operations even when the computation results in Nothing.
+
+	12. Implement a State monad to manage a simple counter. Write functions to increment and decrement the counter.
+
+	13. Design a pipeline using monads where the output of one monad feeds into another. Demonstrate this with numeric operations.
+
+	14. Write a Monad Transformer to combine the effects of two monads: Maybe and Logging.
+
+	15. Implement a Reader monad to pass an environment (like configuration) to a computation. Demonstrate its use by accessing a configuration value.
+
+	16. Build a Writer monad to accumulate a list of results. Test it with a function that adds numbers and stores intermediate results.
+
+	17. Use the Reader monad to create a computation that depends on global state without passing state explicitly.
+
+	18. Develop an IO Monad wrapper for simple input and output operations. Demonstrate it with reading a number and doubling it.
+
+	19. Combine the State and Logging monads. Manage a counter while logging each state change.
+
+	20. Implement a supervisor function using a monad to monitor uptime of child computations. Restart children after a failure and log uptime statistics.
+
+B) Monoid Pattern# Topic
+	1. Define a monoid with integers and addition as the operation. Identify its identity element and verify the monoid laws.
+
+	2. Implement a monoid for strings using concatenation as the operation. Test it with different strings.
+
+	3. Create a monoid for a list data type, where the operation is concatenation and the identity is an empty list.
+
+	4. Write a function to combine multiple integers into a single sum using the integer addition monoid.
+
+	5. Define a product monoid where the operation is multiplication, and identify its identity element.
+
+	6. Implement a monoid for sets where the operation is union and the identity is an empty set.
+
+	7. Write a function to reduce a list of strings to a single string using the string concatenation monoid.
+
+	8. Create a monoid for boolean values with logical AND as the operation. Identify the identity element.
+
+	9. Implement a monoid for boolean values with logical OR as the operation. Identify the identity element.
+
+	10. Combine two monoids: the integer addition monoid and the product monoid. Demonstrate how they can be applied separately to the same list of numbers.
+
+	11. Create a custom monoid for tracking the maximum value in a collection of numbers. Test it with a few lists.
+
+	12. Design a monoid to count occurrences in a list. The operation should combine counts from sublists.
+
+	13. Implement a monoid for a pair (tuple) where both elements are combined using different operations (e.g., addition for the first and multiplication for the second).
+
+	14. Write a function to reduce a list of sets using the set intersection monoid.
+
+	15. Create a monoid for tracking the history of operations. Use a list to record operations performed.
+
+	16. Define a monoid for a 2D vector where the operation is vector addition. Identify the identity vector.
+
+	17. Implement a monoid for merging dictionaries where the operation is merging keys and summing their values.
+
+	18. Create a monoid for complex numbers where the operation is addition, and the identity is the zero complex number.
+
+	19. Write a function that uses the monoid pattern to merge multiple logs into a single log.
+
+	20. Implement a monoid for matrices where the operation is matrix multiplication, and the identity is the identity matrix.
+
+C) Functor Pattern# Topic
+	1. Define a functor for a simple list data structure. Implement the `map` function to apply a lambda to each element of the list.
+
+	2. Create a functor for a `Maybe` type (containing a value or nothing). Implement a function to apply a lambda to the contained value.
+
+	3. Write a test to verify the identity law for a list functor: mapping the identity function over a list returns the same list.
+
+	4. Implement a functor for a binary tree. Write a `map` function to apply a lambda to each node's value.
+
+	5. Test the composition law for a list functor: mapping a composition of two lambdas should produce the same result as mapping each lambda sequentially.
+
+	6. Define a functor for a dictionary (key-value pairs). Write a `map` function to apply a lambda to each value while keeping the keys unchanged.
+
+	7. Implement a functor for a tuple, applying a lambda only to the second element.
+
+	8. Create a functor for a `Result` type (representing success or error). Ensure the lambda applies only to the success case.
+
+	9. Write a function to transform all the elements of a functor using a single lambda and demonstrate with a list.
+
+	10. Design a functor for a stream of data. Implement `map` to transform each item lazily.
+
+	11. Test the functor laws for a binary tree functor with example trees.
+
+	12. Create a functor for a custom 2D point structure and map a scaling lambda over it.
+
+	13. Write a functor for a stack data structure. Ensure the `map` function preserves the stack's order.
+
+	14. Implement a functor for an `Either` type. Apply a lambda only to the right-hand value.
+
+	15. Combine two functors (e.g., list and `Maybe`) into a nested functor. Write a `map` function to apply a lambda to all the nested values.
+
+	16. Create a functor for a matrix represented as a list of lists. Write a `map` function to apply a lambda to each element.
+
+	17. Design a functor for a queue data structure. Write a `map` function to transform each element while maintaining the queue order.
+
+	18. Implement a functor for a graph where nodes have values. Apply a lambda to transform the values in the graph.
+
+	19. Test the functor laws for a dictionary functor using several example dictionaries.
+
+	20. Write a chainable map function for functors that allows lambdas to be applied in a sequence. Demonstrate it with a list functor.
+
+E) Factory Pattern# Topic
+	1. Write a factory function that creates a constant value of type integer. Test it by creating integers with different values.
+
+	2. Create a factory function that generates a list of integers from 1 to n. Test it with n = 5 and n = 10.
+
+	3. Implement a factory function that takes a string and returns a list of its characters.
+
+	4. Write a factory function that takes a size `n` and creates a list of zeros of that size.
+
+	5. Create a factory function to generate a 2D point (x, y). Test it by creating a few points with different coordinates.
+
+	6. Implement a factory function to create a dictionary from a list of keys and values.
+
+	7. Write a factory function that generates a random integer within a specified range.
+
+	8. Create a factory function that builds a binary tree with a single root node. Test it by creating a root node with value 10.
+
+	9. Implement a factory function to generate a custom data type for a `Rectangle`, given its length and breadth.
+
+	10. Write a factory function that takes a lambda function and an integer `n`, and generates a list by applying the lambda function to integers from 1 to `n`.
+
+	11. Create a factory function that produces a `Person` data structure given a name and age.
+
+	12. Write a factory function that creates a stack with an initial set of values. Test it by creating a stack with values `[1, 2, 3]`.
+
+	13. Implement a factory function that generates a graph structure with a single node. Test it with different node values.
+
+	14. Create a factory function to generate a sequence of Fibonacci numbers up to `n`.
+
+	15. Write a factory function that creates a circular list (a list where the last element points back to the first). Test it with a list of size 3.
+
+	16. Implement a factory function to produce mathematical operations (like addition, subtraction) as lambdas. Test it by creating and invoking these operations.
+
+	17. Write a factory function that generates a sequence of timestamps for every minute within a specified range.
+
+	18. Create a factory function that produces a stateful generator for unique IDs. Test it by generating multiple IDs.
+
+	19. Implement a factory function that creates a stream of data from an initial state and a lambda to compute the next state.
+
+	20. Write a factory function that produces a specialized calculator capable of performing basic arithmetic operations. Test it with a few computations.
+
+D) State Pattern# Topic
+	1. Write a stateful function to manage a counter. Implement functions to increment, decrement, and reset the counter.
+
+	2. Create a stateful function that toggles between two states: `on` and `off`. Test it by toggling multiple times.
+
+	3. Implement a state function for a bank account. Allow deposit, withdrawal, and balance inquiry operations.
+
+	4. Write a state function to track the inventory of items in a store. Implement operations to add and remove items.
+
+	5. Create a stateful traffic light controller with three states: `red`, `yellow`, and `green`. Test it by simulating state changes.
+
+	6. Implement a state function that tracks a user's login status (logged in or logged out). Test it with login and logout operations.
+
+	7. Write a stateful function that keeps track of the last 5 inputs received. Test it with a sequence of numbers.
+
+	8. Create a state function for a music player. Manage states like `playing`, `paused`, and `stopped`.
+
+	9. Implement a stateful function to simulate a vending machine. Track the balance and items dispensed.
+
+	10. Write a state function to manage a simple game with `start`, `play`, and `end` states.
+
+	11. Create a stateful function to manage a timer. Implement start, stop, and reset operations.
+
+	12. Implement a state function for a thermostat. Allow the user to set and get the temperature.
+
+	13. Write a stateful function to track a to-do list. Implement operations to add, complete, and remove tasks.
+
+	14. Create a state function for a robot that tracks its position on a grid. Allow the robot to move up, down, left, and right.
+
+	15. Implement a state function for a shopping cart. Track items added and the total cost.
+
+	16. Write a stateful function that tracks user input history and allows undoing the last action.
+
+	17. Create a stateful function to simulate a turn-based game. Track the current player and their score.
+
+	18. Implement a state function for a simple finite state machine. Define transitions and test them with a sequence of inputs.
+
+	19. Write a stateful function to manage a library system. Track borrowed and available books.
+
+	20. Create a stateful function that manages a queue of tasks. Allow adding tasks to the queue and marking them as completed.
+
+E) Lazy Computation Pattern # Topic
+	1. Write a lazy stream that generates an infinite sequence of integers starting from 1. Test it by retrieving the first 10 numbers.
+
+	2. Create a lazy stream that generates an infinite sequence of even numbers. Test it by fetching the first 5 even numbers.
+
+	3. Implement a lazy Fibonacci sequence generator. Test it by retrieving the first 10 numbers in the sequence.
+
+	4. Write a lazy function that generates an infinite stream of random numbers within a given range. Test it by fetching 5 random numbers.
+
+	5. Create a lazy stream that generates all prime numbers. Test it by retrieving the first 10 primes.
+
+	6. Implement a lazy computation that generates an infinite sequence of powers of 2. Test it by fetching the first 8 powers.
+
+	7. Write a lazy function that generates an infinite sequence of alternating positive and negative integers (e.g., 1, -2, 3, -4, ...).
+
+	8. Create a lazy computation that generates a repeating sequence of characters from a given string. Test it with "abc".
+
+	9. Implement a lazy stream that reads a file line by line. Test it with a small text file.
+
+	10. Write a lazy function that generates an infinite stream of timestamps, starting from the current time, spaced 1 second apart.
+
+	11. Create a lazy computation that generates all permutations of a given list. Test it with a small list.
+
+	12. Implement a lazy function that generates an infinite sequence of squares of integers. Test it by fetching the first 5 squares.
+
+	13. Write a lazy function that generates an infinite stream of words from a paragraph of text. Test it with a short paragraph.
+
+	14. Create a lazy computation that generates a sequence of alternating uppercase and lowercase characters from an input string. Test it with "lazy".
+
+	15. Implement a lazy stream that generates a sequence of natural numbers but filters out those divisible by 3. Test it by retrieving the first 10 numbers.
+
+	16. Write a lazy function that generates all combinations of a given list. Test it with a small list.
+
+	17. Create a lazy computation that fetches data from a web API, one result at a time. Test it by simulating API calls.
+
+	18. Implement a lazy stream that simulates a queue where elements are generated lazily. Test it with adding and consuming elements.
+
+	19. Write a lazy function that generates infinite circular shifts of a given list. Test it with [1, 2, 3].
+
+	20. Create a lazy computation that generates an infinite stream of data based on a recursive formula. Test it with a formula like `x(n) = x(n-1) + 2`.
+
+F) Chaining Pattern # Topic
+	1. Write a chaing function that chains two lambdas: one that adds 2 to a number and another that multiplies it by 3. Test it with a few numbers.
+
+	2. Write a chaing function that chains a list of lambdas to an input in sequence. Test it with a list of arithmetic operations.
+
+	3. Write a series of functions and chain them so they 1. convert a list of integers to strings, 2. filter out strings shorter than 2 characters, and 3. join the strings into a single string.
+
+	4. Write a chaing function that chains a set of functions that transforms a list of numbers by squaring them and then summing the results.
+
+	5. Write a chaing function that chains a set of functions that maps over a list to double its elements, filters out odd numbers, and reduces the result to a product.
+
+	6. Write a chaing function that chains a set of functions to process text: trim whitespace, convert to lowercase, and replace spaces with underscores.
+
+	7. Write a chaing function that chains a set of functions that takes a dictionary, doubles all values, and filters out keys starting with a specific character.
+
+	8. Write a chaing function that chains a set of functions that reads numbers from a list, keeps only the positive ones, and calculates their average.
+
+	9. Write a chaing function that chains a set of functions that normalizes a list of numbers: subtract the mean and divide by the standard deviation.
+
+	10. Write a chaing function that chains a set of functions that starts with an initial integer, squares it, adds 5, and then finds its square root.
+
+	11. Write a chaing function that chains a set of functions so they parse a JSON string into a dictionary, extract a specific key, and apply a transformation to its value.
+
+	12. Write a chaing function that chains a set of functions so that they process a list of words: filter the words with more than 4 letters, convert them to uppercase, and join them into a sentence.
+
+	13. Write a chaing function that chains a sest of function so they work on a list of numbers: adds 3, divides by 2, and collects the first 5 results.
+
+	14. Write a chaing function that chains three custom transformations to a 2D point: translation, rotation, and scaling.
+
+	15. Write a chaing function that chains a set of functions so they filter a list of strings by length, sort them alphabetically, and concatenate them into a single string.
+
+	16. Write a chaing function that chains a set of functions to process log messages: add timestamps, truncate messages longer than 50 characters, and save them to a list.
+
+	17. Write a chaing function that chains a set of matrix operations: transpose, scale by a factor, and find the determinant.
+
+	18. Write a chaing function that chains a set of functions so they convert a list of file paths into file names, sort them by extension, and remove duplicates.
+
+	19. Write a chaing function that chains a set of functions to process numbers: round to the nearest integer, convert to a string, and append a suffix.
+
+	20. Write a chaing function that chains a set of functions that processes a stack: reverses the order of elements, doubles each element, and pops the top two values.
+
+
+G) Beautiful Code # topic
+	1. Write a function to calculate the factorial of a number using recursion. Ensure the function is concise and uses meaningful names.
+
+	2. Create a function to reverse a list. Write it in a way that is clear and easy to understand at a glance.
+
+	3. Implement a function to find the greatest common divisor (GCD) of two numbers using recursion. Focus on clarity and elegance.
+
+	4. Write a pipeline function that filters even numbers, squares them, and sums them from a list. Ensure the pipeline is beautifully readable.
+
+	5. Create a function that converts a list of integers into a comma-separated string. Prioritize simplicity in your implementation.
+
+	6. Implement a map-reduce pattern to find the average of a list of numbers. Ensure the code is well-structured and easy to follow.
+
+	7. Write a recursive function to flatten a nested list. Use names and formatting to make the recursion logic self-explanatory.
+
+	8. Create a function to calculate the Fibonacci sequence up to `n` terms. Aim for a balance of brevity and clarity.
+
+	9. Implement a function that takes a string and returns a dictionary of character counts. Make the function harmonious and easy to read.
+
+	10. Write a function that checks whether a number is prime. Use meaningful names and structure to make the logic self-explanatory.
+
+	11. Create a higher-order function that applies a sequence of transformations to a list. Ensure the code is distilled and elegant.
+
+	12. Write a function to merge two sorted lists into one sorted list. Focus on crafting a compassionate implementation.
+
+	13. Implement a function to calculate the transpose of a matrix. Aim for a balance between readability and succinctness.
+
+	14. Write a function that generates all subsets of a given list. Use functional constructs to keep the code concise and clear.
+
+	15. Create a function to simulate a basic game loop. Use simple structures and names to clearly articulate the logic.
+
+	16. Implement a function that finds the longest increasing subsequence in a list. Ensure the implementation is harmonious and intuitive.
+
+	17. Write a pipeline to process a stream of text: convert to lowercase, remove punctuation, and split into words. Ensure the flow is logical and clear.
+
+	18. Create a function to calculate the running total of a list of numbers. Use functional style to keep the implementation distilled.
+
+	19. Implement a recursive function to solve the Tower of Hanoi problem. Focus on clarity in naming and step description.
+
+	20. Write a function to parse and evaluate a mathematical expression represented as a string. Make the logic audacious and original while remaining understandable.
+
+H) Memoization # Topic
+	1. Implement a memoized function to calculate shipping costs based on weight and distance.
+	2. Use memoization to optimize a function that calculates customer discounts based on purchase history.
+	3. Write a memoized solution to check if a product is in stock in multiple warehouses.
+	4. Use memoization to calculate the best delivery route for a courier service given a set of locations.
+	5. Implement a memoized function to determine the optimal price for a product based on competitor data.
+	6. Use memoization to optimize the calculation of tax rates for different regions.
+	7. Write a memoized function to fetch and cache product recommendations based on customer behavior.
+	8. Implement a memoized solution to predict sales trends based on past data.
+	9. Use memoization to speed up a function that calculates employee bonuses based on performance metrics.
+	10. Optimize a memoized function to match job candidates with open positions based on skills and experience.
+	11. Implement a memoized function to calculate the total revenue for a company given historical sales data.
+	12. Use memoization to optimize a function that determines the availability of meeting rooms across multiple offices.
+	13. Write a memoized solution to calculate the optimal allocation of marketing budget across various channels.
+	14. Implement a memoized function to suggest inventory restocking levels based on recent sales trends.
+	15. Use memoization to optimize the calculation of dynamic pricing for event tickets based on demand.
+	16. Write a memoized function to determine the most efficient staff scheduling for a retail store.
+	17. Implement a memoized solution to track the best-performing advertisements in a campaign.
+	18. Use memoization to calculate delivery times for multiple shipping addresses.
+	19. Optimize a memoized function to determine the most profitable product mix for a retail store.
+	20. Implement a memoized algorithm to analyze website traffic and identify peak user times.

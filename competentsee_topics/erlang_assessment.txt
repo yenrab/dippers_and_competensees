@@ -1,0 +1,176 @@
+A) Variables #topic
+	1. Declare a variable to store the result of adding two numbers.
+	2. Assign a single integer to a variable and multiply it by another number, storing the result in another variable.
+	3. Create a variable to store a string and then assign its uppercase version to another variable.
+	4. Store a single character in a variable and convert it to its ASCII value in another variable.
+	5. Assign the result of a subtraction operation to a variable and use it in another arithmetic expression.
+	6. Declare a variable to store a boolean value and flip its value using a new variable.
+	7. Assign the result of a multiplication operation to a variable and add a constant to it in another variable.
+	8. Create a variable to store a floating-point number and round it to the nearest integer in another variable.
+	9. Assign a fixed integer to a variable and compute its square in another variable.
+	10. Store the result of a division operation in a variable and compare it with another number, storing the boolean result in a new variable.
+	11. Assign a single atom to a variable and check if it matches another atom, storing the result in a boolean variable.
+	12. Declare a variable to store a single number and increment it by one, storing the result in another variable.
+	13. Assign a character code to a variable and convert it to its corresponding character in another variable.
+	14. Store the result of an addition operation in a variable and check if it is greater than a fixed number, assigning the result to another variable.
+	15. Create a variable to store a boolean expression involving logical `and` or `or`.
+	16. Assign a single number to a variable and calculate its modulo with another number, storing the result in another variable.
+	17. Declare a variable to store the value of a constant mathematical expression like `3.14`.
+	18. Assign a result of a comparison operation (e.g., `5 > 3`) to a variable.
+	19. Use a variable to store the result of an integer division.
+	20. Assign the result of negating a boolean value to a variable.
+
+B)Tuples # topic
+	1. Assign a tuple containing three integers to a variable and extract the second element using pattern matching.
+	2. Create a variable to store a tuple with a string and a number, then retrieve both values separately.
+	3. Declare a variable to store a tuple representing a coordinate pair (x, y).
+	4. Assign a tuple with three atoms to a variable and extract the last atom using pattern matching.
+	5. Store a tuple with two boolean values and perform a logical `and` operation using both values.
+	6. Create a variable to hold a tuple with a character and its ASCII value.
+	7. Assign a tuple representing a person's first name, last name, and age to a variable and retrieve the age.
+	8. Declare a tuple to store two floating-point numbers and calculate their average.
+	9. Create a variable to hold a tuple with a date in the format `{Year, Month, Day}` and extract the month.
+	10. Assign a tuple with mixed data types (e.g., an integer, atom, and string) to a variable and extract the string.
+	11. Store a tuple with two numbers representing a rectangle's width and height, then compute the area.
+	12. Assign a tuple with a flag (boolean) and a message (string) to a variable and retrieve the message.
+	13. Create a tuple representing a student's ID, name, and grade, and use pattern matching to retrieve the grade.
+	14. Assign a tuple with three colors (atoms) to a variable and replace one of the colors with a new atom.
+	15. Declare a tuple with two elements representing a key-value pair and extract the key.
+	16. Store a tuple representing the dimensions of a 3D object (length, width, height) and calculate its volume.
+	17. Assign a tuple representing a start and end time to a variable and calculate the duration.
+	18. Create a variable to hold a tuple with an error code (integer) and error message (string), and extract both.
+	19. Assign a tuple representing a person’s location (`{City, Country}`) and extract the city name.
+	20. Store a tuple representing a point in 3D space (`{X, Y, Z}`) and retrieve the Z-coordinate.
+
+C) Lists # topics
+	1. Create a list of integers and extract the head and tail using pattern matching.
+	2. Assign a list of strings to a variable and retrieve the first string.
+	3. Use pattern matching to split a list into the first two elements and the rest.
+	4. Create a list of atoms and append a new atom to the list.
+	5. Assign a list of numbers to a variable and calculate the sum of the first two elements.
+	6. Construct a list dynamically by adding an element to an empty list.
+	7. Use pattern matching to retrieve the last element of a list by reversing it first.
+	8. Assign a list with mixed data types to a variable and extract the integer values.
+	9. Create a list of booleans and count the number of `true` values in it.
+	10. Use pattern matching to extract every second element from a list.
+	11. Assign a list of characters to a variable and convert it to a string.
+	12. Use a list comprehension to double the values of all elements in a list of integers.
+	13. Create a list of tuples and extract the first element from each tuple using a list comprehension.
+	14. Assign a list of numbers to a variable and filter out even numbers using list comprehension.
+	15. Decompose a list into its first element and a list containing all other elements.
+	16. Construct a list by concatenating two smaller lists.
+	17. Create a list of floating-point numbers and round each value to the nearest integer.
+	18. Assign a list of atoms to a variable and check if a specific atom exists in the list.
+	19. Use pattern matching to split a list into three parts: the head, the second element, and the rest.
+	20. Create a list of lists and flatten it into a single list.
+
+D) List BIFs # topic
+	1. Use `lists:append/2` to combine two lists into one.
+	2. Use `lists:reverse/1` to reverse a given list.
+	3. Apply `lists:filter/2` to extract only even numbers from a list of integers.
+	4. Use `lists:map/2` to square each element in a list of numbers.
+	5. Apply `lists:sort/1` to sort a list of integers in ascending order.
+	6. Use `lists:member/2` to check if a specific element exists in a list.
+	7. Apply `lists:nth/2` to retrieve the third element in a list.
+	8. Use `lists:foldl/3` to calculate the sum of all numbers in a list.
+	9. Apply `lists:foldr/3` to concatenate a list of strings into a single string.
+	10. Use `lists:keyfind/3` to find a tuple in a list by a specific key.
+	11. Apply `lists:keyreplace/4` to replace a tuple in a list by its key.
+	12. Use `lists:flatmap/2` to generate a flattened list from nested lists.
+	13. Apply `lists:all/2` to check if all elements in a list satisfy a condition.
+	14. Use `lists:any/2` to check if any element in a list satisfies a condition.
+	15. Apply `lists:split/2` to divide a list into two parts at a specified position.
+	16. Use `lists:zip/2` to combine two lists into a list of tuples.
+	17. Apply `lists:unzip/1` to split a list of tuples into two separate lists.
+	18. Use `lists:takewhile/2` to extract elements from a list until a condition is false.
+	19. Apply `lists:dropwhile/2` to skip elements from a list until a condition is false.
+	20. Use `lists:usort/1` to remove duplicates and sort a list in ascending order.
+
+E) Functions # topic
+	1. Write a function that calculates the factorial of a number using recursion.
+	2. Create a function that takes a list of numbers and returns a new list with all elements squared.
+	3. Write a function to find the greatest common divisor (GCD) of two integers using recursion.
+	4. Implement a function that reverses a given list without using the lists:reverse/1 function.
+	5. Write a function that checks whether a given string is a palindrome.
+	6. Create a function to merge two sorted lists into a single sorted list.
+	7. Write a function that determines if all elements in a list are unique.
+	8. Implement a function that takes a number and returns its Fibonacci sequence up to that number.
+	9. Write a function that removes all occurrences of a specified element from a list.
+	10. Create a function that counts the occurrences of each unique element in a list.
+	11. Write a function to check if one list is a subset of another list.
+	12. Implement a function that partitions a list into two lists: one with even numbers and one with odd numbers.
+	13. Write a function that calculates the sum of all prime numbers in a given range.
+	14. Create a function that finds the intersection of two lists.
+	15. Write a function that converts a list of characters into their corresponding ASCII values.
+	16. Implement a function that determines the longest consecutive sequence of identical elements in a list.
+	17. Write a function that removes duplicates from a list while preserving the original order.
+	18. Create a function that calculates the Cartesian product of two lists.
+	19. Write a function that generates all permutations of a given list.
+	20. Implement a function that checks if two lists are permutations of each other.
+
+F) Stateful Processes # topic
+	1. Write a stateful process to implement a counter that can increment, decrement, and reset its value.
+	2. Create a stateful process that maintains a list of unique elements, allowing additions and removals.
+	3. Implement a stateful process to simulate a basic bank account with deposit, withdraw, and balance inquiry functionalities.
+	4. Write a stateful process to track the highest and lowest temperatures recorded during a day.
+	5. Create a stateful process that implements a finite state machine for a simple traffic light system.
+	6. Implement a stateful process to manage a todo list with functionalities to add, remove, and view tasks.
+	7. Write a stateful process to implement a key-value store with functionalities to add, retrieve, and delete keys.
+	8. Create a stateful process that manages a queue with operations to enqueue and dequeue items.
+	9. Implement a stateful process to simulate a vending machine with coin insertion and item dispensing functionality.
+	10. Write a stateful process to manage the inventory of a small store, including adding stock and reducing stock for sales.
+	11. Create a stateful process to simulate a stopwatch that can start, stop, and reset its timer.
+	12. Implement a stateful process that tracks the state of a game with a simple win/lose condition.
+	13. Write a stateful process to maintain a list of active user sessions, allowing addition and removal.
+	14. Create a stateful process to simulate a library book loan system with functionalities for checkout and return.
+	15. Implement a stateful process to simulate a turn-based game between two players.
+	16. Write a stateful process to track a player's inventory in a role-playing game, including adding and removing items.
+	17. Create a stateful process that monitors the health of a system by storing recent error logs.
+	18. Implement a stateful process that tracks the state of a simple elevator system with floors and directions.
+	19. Write a stateful process to simulate a basic scheduler that maintains a queue of tasks and executes them one by one.
+	20. Create a stateful process to simulate a chat room that maintains a list of participants and their messages.
+
+G) List Comprehensions # topic
+	1. Use a list comprehension to generate a list of squares for numbers from 1 to 10.
+	2. Create a list of even numbers from a list of integers using a list comprehension.
+	3. Use a list comprehension to extract all strings from a list containing mixed data types.
+	4. Generate a list of tuples where each tuple contains a number and its square for numbers from 1 to 5.
+	5. Use a list comprehension to create a list of all uppercase letters from a string.
+	6. Filter out all odd numbers from a list of integers using a list comprehension.
+	7. Create a list of the lengths of strings in a given list using a list comprehension.
+	8. Use a list comprehension to generate a list of all numbers divisible by 3 from 1 to 20.
+	9. Generate a flattened list from a list of lists using a list comprehension.
+	10. Use a list comprehension to create a list of tuples combining elements from two separate lists.
+	11. Create a list of numbers from 1 to 100 that are both odd and divisible by 5 using a list comprehension.
+	12. Use a list comprehension to convert a list of Celsius temperatures to Fahrenheit.
+	13. Filter a list of atoms to include only those starting with the letter `a` using a list comprehension.
+	14. Generate a list of boolean values indicating whether each number in a list is greater than 10.
+	15. Use a list comprehension to create a new list by adding 5 to each number in a list.
+	16. Generate a list of pairs `(x, y)` where `x` and `y` are elements of two lists, with `x > y`.
+	17. Use a list comprehension to create a list of only positive numbers from a given list of integers.
+	18. Generate a list of vowels from a given string using a list comprehension.
+	19. Use a list comprehension with a condition to filter out negative numbers from a list.
+	20. Generate a list of all prime numbers from 1 to 50 using a list comprehension.
+
+H) Stateless Processes # topic
+	1. Write a stateless process to compute the factorial of a given number
+	2. Create a stateless process that validates an email address
+	3. Implement a stateless process to convert temperature from Celsius to Fahrenheit
+	4. Write a stateless process that reverses a string
+	5. Create a stateless process that filters out odd numbers from a list
+	6. Implement a stateless process to calculate the greatest common divisor (GCD)
+	7. Write a stateless process that trims whitespace and converts a string to lowercase
+	8. Create a stateless process that merges two sorted lists into one sorted list
+	9. Implement a stateless process that checks if a string is a palindrome
+	10. Write a stateless process to find the maximum value in a list of integers
+	11. Create a stateless process to format a date string
+	12. Implement a stateless process to generate a substring
+	13. Write a stateless process to split a CSV line into fields
+	14. Create a stateless process to replace all occurrences of a character in a string
+	15. Implement a stateless process that sorts a list of strings alphabetically
+	16. Write a stateless process to compute the power of a number
+	17. Create a stateless process that concatenates multiple lists
+	18. Implement a stateless process to parse a JSON string into an object
+	19. Write a stateless process to determine if a word appears in a given text
+	20. Create a stateless process to convert a list of objects into a specific output format
+

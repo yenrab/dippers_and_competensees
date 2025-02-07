@@ -1,0 +1,62 @@
+A) Droplets # Topic
+	1. Create a droplet and delete it named "MyFirstDroplet" using the default Ubuntu distribution. 
+	2. Create a droplet and delete it in the New York data center region and name it "NYC-Droplet".
+	3. Set up a droplet and delete it with 2GB RAM and name it "MediumDroplet".
+	4. Create a droplet and delete it using the CentOS distribution and name it "CentOS-Droplet".
+	5. Use the cheapest and delete it droplet plan to create a droplet named "BudgetDroplet".
+	6. Create a droplet and delete it in the Singapore region and name it "AsiaDroplet".
+	7. Set up a droplet and delete it and configure SSH access with a public key.
+	8. Create a droplet and delete it using the latest Fedora distribution and name it "FedoraDroplet".
+	9. Set up a droplet and delete it in the Frankfurt data center with backups enabled and name it "BackupDroplet".
+	10. Deploy a droplet and test resizing it to a larger plan. Name it "ResizedDroplet".
+	11. Create a droplet and delete it once you verify it’s working. Name it "TemporaryDroplet".
+
+B) SSH Connectivity # Topic
+	1. Connect to a droplet using SSH as the root user and create a new non-root user named "developer".
+	2. Set up a non-root user named "admin" with sudo privileges and connect to the droplet using SSH.
+	3. Add a new SSH public key to the authorized keys of a non-root user and use it to log in.
+	4. Create a droplet and configure a non-root user named "webadmin" for SSH access only.
+	5. Configure a new user "sysadmin" with a home directory and connect using SSH.
+	6. Set up a non-root user named "developer" with a custom SSH port for login.
+	7. Create a non-root user named "backup" and set up SSH key-based authentication for this user.
+	8. Configure a non-root user named "guest" with no sudo privileges and test SSH login.
+	9. Add multiple public keys to a non-root user’s authorized keys file and log in using each.
+	10. Create a non-root user named "monitor" for monitoring purposes and connect using SSH.
+	11. Create a non-root user named "analytics" and connect using an SSH key stored in a custom 
+	12. Configure a droplet so that only a non-root user named "devops" can connect using SSH.
+	13. Add a new user "dataadmin" and connect via SSH to test permissions for a specific folder.
+	14. Log in to a droplet using SSH as a non-root user named "project" and create a file in their home directory.
+	15. Set up a droplet with a non-root user "support" and verify they cannot modify system files.
+
+C) Firewalls # Topic
+	1. Create a firewall that allows only SSH (port 22) traffic and apply it to a droplet.
+	2. Set up a firewall rule to allow HTTP (port 80) traffic and test it by accessing the droplet in a browser.
+	3. Configure a firewall to allow HTTPS (port 443) traffic and deny all other traffic.
+	4. Set up a firewall for a droplet that only allows SSH from a specific IP address.
+	5. Create a firewall rule to block all incoming traffic except for ICMP (ping) and test connectivity.
+	6. Configure a firewall that allows traffic on ports 80 and 443 and deny all other incoming traffic.
+	7. Set up a droplet with a firewall allowing MySQL (port 3306) traffic only from another droplet’s private IP.
+	8. Create a firewall that denies all outgoing traffic except DNS (port 53).
+	9. Apply a firewall to a droplet to allow only SSH (port 22) and test access using the allowed port.
+	10. Set up a firewall to allow traffic on a custom port (e.g., 8080) and test by running a server on that port.
+	11. Configure a firewall that blocks all incoming traffic, then selectively enable SSH access.
+	12. Create a firewall allowing inbound traffic on multiple ports (e.g., 22, 80, 443) and deny all other traffic.
+	13. Configure a firewall that allows inbound traffic from a specific IP range and test connectivity.
+	14. Apply a firewall that blocks all traffic, then add an exception for your home IP address to allow SSH.
+	15. Set up a droplet firewall that allows only outbound traffic to a specific hostname or IP address.
+	16. Configure a firewall rule to allow all outgoing traffic and block all incoming traffic, including SSH.
+	17. Remove all rules from a firewall applied to a droplet and test if all traffic is blocked as expected.
+
+D) HTTPS Certificates # topic
+	1. Install Certbot on a droplet running a stand-alone server.
+	2. Generate a basic SSL certificate for a domain using Certbot in stand-alone mode.
+	3. Use Certbot to generate a certificate for a subdomain and apply it to the server.
+	4. Test the renewal process of an SSL certificate using Certbot’s dry-run command.
+	5. Configure a firewall to allow Certbot to obtain and renew certificates.
+	6. Use Certbot to revoke an existing SSL certificate and test access to the server.
+	7. Obtain a certificate for multiple sub-domains using Certbot in a single command.
+	8. Use Certbot to configure an auto-renewal cron job for the SSL certificate.
+	9. Use Certbot to generate a certificate for a server running on a custom port.
+	10. Test a Certbot certificate on the stand-alone server using SSL tools to verify configuration.
+	11. Generate a certificate with Certbot using a manual DNS challenge for verification.
+	12. Apply a Certbot certificate to a stand-alone server, then use a browser to verify HTTPS works correctly.
