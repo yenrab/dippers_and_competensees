@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But do not ignore directories (so Git can recurse into them)
+!*/
+
+# Do not ignore any files ending in .txt (in any directory)
+!*.txt
