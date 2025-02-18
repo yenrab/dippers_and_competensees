@@ -26,7 +26,7 @@ B) pwd # Topic
 	9. Confirm your directory location after navigating to a relative path.
 	10. Display the present working directory and compare it with the output of `ls`.
 	11. Use `pwd` to check the directory after running a command like `cd /tmp`.
-	12. Verify the symbolic link path of the current directory with `pwd -P`.
+	12. Verify the symbolic link path of the current directory with pwd.
 	13. Use `pwd` to check your directory after navigating deep into a multi-level path.
 
 C) mkdir # Topic
@@ -44,13 +44,13 @@ C) mkdir # Topic
 	12. Create directories recursively with `-p`, starting from a non-existent parent (e.g., `projects/2024/January`).
 
 D) cd # Topic
-	1. Change to the home directory using `cd`.
+	1. Change to the home directory.
 	2. Navigate to a directory named `Documents` located in the current directory.
 	3. Move up one level in the directory structure.
 	4. Use `cd` to move to an absolute path, such as `/etc`.
 	5. Navigate to a directory using a relative path, such as `../siblingdir`.
 	6. Change to the root directory.
-	7. Navigate to the previous directory you were in using `cd -`.
+	7. Navigate to the previous directory you were in.
 	8. Use `cd` to enter a nested directory path, such as `project/src/tests`.
 	9. Navigate into a directory with spaces in its name (e.g., `My Documents`).
 	10. Use `cd` to move into a hidden directory, such as `.config`.
@@ -66,9 +66,8 @@ E) tail # Topic
 	4. Use `tail` to display the last 10 lines of a file located in a different directory, such as `/var/log/syslog`.
 	5. Use `tail` with a file that does not exist and observe the error message.
 	6. Monitor two files simultaneously using `tail -f file1.txt file2.txt`.
-	7. Use `tail` with the `--pid` option to stop monitoring when a process ends.
 	8. Display the last 10 lines of a file, appending line numbers to the output.
-	9. Use `tail` with the `--bytes` option to display the last 100 bytes of a file.
+	9. Use `tail` to display the last 100 bytes of a file.
 
 F) rm # Topic
 	1. Remove a single file named `test.txt`.

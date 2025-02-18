@@ -27,11 +27,9 @@ A) Functor # pattern name
 	1) Description: Each monoid consists of a pair (M,*) where M is a set of elements and * is an operation/function. Monoids are used to reduce the amount of unique, un-reused code in an application or library and aid in producing concurrent applications.
 	2) Rules: # In order for something to be an instance of the monoid pattern, these laws must be true for the thing being examined.
 		a) The operation/function, *, must be a binary operation/function. In other words it must have two parameters.
-
-		b) The parameters and value (result) of the operation/function must all be of the same type.
-		c) For all a,b in M, a*b is also in M. In other words, the set M is closed under the operation/function *.
-		d) For all a,b,c in M, (a*b)*c = a*(b*c). The operation * is associative.
-		e) There exists an element e in M such that for all a in M, e*a=a*e=a. There is an identity element in M.
+		b) For all a,b in M, a*b is also in M. In other words, the set M is closed under the operation/function *.
+		c) For all a,b,c in M, (a*b)*c = a*(b*c). The operation * is associative.
+		d) There exists an element e in M such that for all a in M, e*a=a*e=a. There is an identity element in M.
 	3) Real Life Examples:
 		a) The pair (Z,+) is a monoid. The set of all integers, positive, negative, and zero, is closed under the addition operation/function and meets all the other requirements for being a monoid.
 		b) description: Set operations are used whenever you are working with significant amounts of data. Each of these set operations is a monoid since a_type is the same for each function. In these examples, a_type and b_type may or may not be the same type.
