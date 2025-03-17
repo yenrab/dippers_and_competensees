@@ -1,0 +1,16 @@
+A) Modules of Functions# Topic Name
+	1) Description: Modules consist of a set of related functions. The relationship can be to accomplish a single task, or be to accomplish a set of related tasks. For example, you could create a statistics module that contains a set of functions that calculate min, max, mean, standard deviation, etc.
+	2) Why: Modules can be shared between different applications. They are similar to functions in that they encourage code reuse. There are even web sites, like PyPi, which allow programmers to share with others around the world.
+	3) When: If there is an existing module that does what you need done, you should use it. If you create a module that is generic enough that others could use it, you should share it. That sharing may be only within a company or it might be for anybody to use.
+
+B) Problem Decomposition# Topic Name
+	1) Description: The way engineers solve problems is to break the problem down into smaller sub-problems. When these sub-problems are solved, their results are used to solve the original problem.
+	2) Why: Real problems tend to be too big to keep their entirety in your mind. By discovering what the sub-problems are, recording what they are, and how their results can be used to solve the original problem, you reduce the cognative load and stress of solving problems.
+	3) When: Always. Keep breaking your problems down until you have some you can see how to solve.
+
+C) Troubleshooting# Topic Name
+	1) Description: Troubleshooting is the process by which programmers get their code to do what they want it to do. 
+	2) The first version of written code often has two types of problems in it.
+		a. logic bugs - this type of problem can be described as the program doing what it was told to do, but that it was told to do the wrong thing in one or more circumstances
+		b. syntax errors - this type of problem causes code to crash. It could be that a function was called that doesn't exist. It may be that the wrong types of parameters were passed to a function. There are lots of things it might be.
+	3) When: Always. Any time you write a function, you should troubleshoot it. This is done when you run the code. When you exercise it. When you test it.

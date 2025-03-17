@@ -332,20 +332,19 @@ H) Memoization # Topic
 	1. Implement a memoized function to calculate shipping costs based on weight and distance.
 	2. Use memoization to optimize a function that calculates customer discounts based on purchase history.
 	3. Write a memoized solution to check if a product is in stock in multiple warehouses.
-	4. Use memoization to calculate the best delivery route for a courier service given a set of locations.
-	5. Implement a memoized function to determine the optimal price for a product based on competitor data.
-	6. Use memoization to optimize the calculation of tax rates for different regions.
-	7. Write a memoized function to fetch and cache product recommendations based on customer behavior.
-	8. Implement a memoized solution to predict sales trends based on past data.
-	9. Use memoization to speed up a function that calculates employee bonuses based on performance metrics.
-	10. Optimize a memoized function to match job candidates with open positions based on skills and experience.
-	11. Implement a memoized function to calculate the total revenue for a company given historical sales data.
-	12. Use memoization to optimize a function that determines the availability of meeting rooms across multiple offices.
-	13. Write a memoized solution to calculate the optimal allocation of marketing budget across various channels.
-	14. Implement a memoized function to suggest inventory restocking levels based on recent sales trends.
-	15. Use memoization to optimize the calculation of dynamic pricing for event tickets based on demand.
-	16. Write a memoized function to determine the most efficient staff scheduling for a retail store.
-	17. Implement a memoized solution to track the best-performing advertisements in a campaign.
-	18. Use memoization to calculate delivery times for multiple shipping addresses.
-	19. Optimize a memoized function to determine the most profitable product mix for a retail store.
-	20. Implement a memoized algorithm to analyze website traffic and identify peak user times.
+	4. Implement a memoized function to determine the optimal price for a product based on competitor data.
+	5. Use memoization to optimize the calculation of tax rates for different regions.
+	6. Write a memoized function to fetch and cache product recommendations based on customer behavior.
+	7. Implement a memoized solution to predict sales trends based on past data.
+	8. Use memoization to speed up a function that calculates employee bonuses based on performance metrics.
+	9. Optimize a memoized function to match job candidates with open positions based on skills and experience.
+	10. Implement a memoized function to calculate the total revenue for a company given historical sales data.
+	11. Use memoization to optimize a function that determines the availability of meeting rooms across multiple offices.
+	12. Write a memoized solution to calculate the optimal allocation of marketing budget across various channels.
+	13. Implement a memoized function to suggest inventory restocking levels based on recent sales trends.
+	14. Use memoization to optimize the calculation of dynamic pricing for event tickets based on demand.
+	15. Write a memoized function to determine the most efficient staff scheduling for a retail store.
+	16. Implement a memoized solution to track the best-performing advertisements in a campaign.
+	17. Use memoization to calculate delivery times for multiple shipping addresses.
+	18. Optimize a memoized function to determine the most profitable product mix for a retail store.
+	19. Implement a memoized functions to identify peak website traffic user times.

@@ -1,12 +1,12 @@
 A) Functor # pattern name
-	1) Description: In functional programming, functors convert something from one category to another. One use of functors is to generalize applying an operation/function/lambda to a set, list, tree, or some other data structure without changing the order, relationship, between the elements of the data structure. Functional programming functors must have at least two parameters, data to act on and functionality to be applied to that data that changes the data in such a way that it moves from one category to another (ex. raw data to massaged data). For anything to be a functor, it must meet the following rules.
+	1) Description: A functor is a set, list, tree, or some other data structure to which functionality without changing the order, relationship, between the elements of the data structure. Functional programming functors must have at least two parameters, data to act on and functionality to be applied to that data that changes the data. The fun For anything to be a functor, it must meet the following rules.
 	2) Rules: # In order for something to be an instance of this pattern, these laws must be true for the thing being examined.
-		a) There must be an identity lambda function that can be passed to the functor. The identity lambda function must make no changes to the data passed to the functor.
+		a) There must be an identity lambda function that can be applied to the functor. The identity lambda function must make no changes to the data passed to the functor.
 			1. pseudocode:
 				-spec some_functor :: any identity_lambda -> any.
 				some_functor data identity_lambda -> data.
 			2. mathematical description:
-				some_functor a id = a
+				S = \{\, f(x) \mid x \in S \,\}
 
 		b) A functor must be able to apply a composed function and achieve the same results as applying the individual functions separately and then composing their values.
 			1. pseudocode: # these two pieces of code must produce the same final result
