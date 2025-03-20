@@ -313,3 +313,136 @@ E) Trie # Topic
 	Focus on recursive processing of sequences:
 	- For `add` and `contains`, process one element at a time, traversing or creating nodes as needed.
 	- For `remove`, ensure nodes are pruned only if they are no longer part of any other sequence.
+
+F) Random Access List # Topic
+	Comprehensive Random Access List Implementation Task
+
+Implement a Random Access List (RAL) data structure where each node is found in a complete binary tree.
+
+Functional Requirements:
+	1.	empty(ralist): Checks if the Random Access List is empty.
+	 - Input: A Random Access List.
+	 - Output: true if the list is empty, false otherwise.
+	2.	cons(element, ralist): Adds an element to the front of the Random Access List.
+	 - Input: An element and a Random Access List.
+	 - Output: A new Random Access List with the element added to the front.
+	3.	head(ralist): Retrieves, not removes, the first element of the Random Access List.
+	 - Input: A Random Access List.
+	 - Output: The first element.
+	4.	tail(ralist): Retrieves, not removes, the last element of the Random Access List.
+	 - Input: A Random Access List.
+	 - Output: The last element.
+	5.	lookup(ralist, index): Retrieves the element at the given index (0-based).
+	 - Input: A Random Access List and an index.
+	 - Output: The element at the specified index.
+	 - Performance: Optimize for logarithmic time access.
+	 - Edge Case: Handle out-of-bounds indices properly.
+	6.	update(ralist, index, newValue): Updates the element at the given index.
+	 - Input: A Random Access List, an index, and a new value.
+	 - Output: A new Random Access List with the specified element updated.
+	7.	toList(ralist): Converts the Random Access List into a standard list.
+	 - Input: A Random Access List.
+	 - Output: A list containing all elements in order.
+	8.	fromList(list): Constructs a Random Access List from a standard list.
+	 - Input: A standard list.
+	 - Output: A Random Access List containing the same elements in order.
+
+Task Instructions:
+	1.	Implement the above functions using functional programming principles.
+	2.	Utilize recursive definitions wherever appropriate.
+	3.	Write tests to validate the correctness of each function.
+	4.	Handle edge cases, such as:
+	 - Accessing or updating an index that is out-of-bounds.
+	 - Converting an empty list.
+	 - Repeated addition or removal of elements.
+	5.	Optimize lookup and update for efficiency, ensuring logarithmic time complexity.
+	6.	Consider the internal representation as a list of complete binary trees; when adding a new element with cons, merge trees of equal size to maintain structure invariants.
+
+Random Access List Properties:
+	 - The structure is designed to allow efficient addition (constant-time) at the front and logarithmic-time random access and updates.
+	 - It maintains an invariant where each tree is complete, supporting efficient indexing by leveraging tree sizes.
+	 - The implementation should adhere to purely functional (immutable) data structure principles, meaning operations produce new lists rather than modifying in place.
+
+Challenge Extension (Optional):
+	1.	map(ralist, function): Applies a function to each element in the Random Access List and returns a new Random Access List.
+	2.	merge(ralist1, ralist2): Combines two Random Access Lists into one, preserving the order of elements.
+	3.	filter(ralist, predicate): Returns a new Random Access List containing only elements that satisfy the given predicate.
+	4.	size(ralist): Computes the total number of elements in the Random Access List.
+
+Example Use Case:
+	 - Start with an empty Random Access List and perform the following:
+	1.	Add elements: Use cons to add elements (e.g., [1, 2, 3, 4]) sequentially.
+	2.	Retrieve elements: Use head to obtain the first element and tail to remove it.
+	3.	Random access: Retrieve elements at specific indices using lookup.
+	4.	Update: Modify an element at a specific index using update.
+	5.	Conversion: Convert the Random Access List to a standard list using toList and verify the order.
+	6.	Edge Cases: Test scenarios such as accessing or updating an element at an invalid index.
+
+Hint for Learners:
+Focus on the internal structure:
+	 - For cons, maintain the list of complete binary trees by merging trees of equal sizes.
+	 - For lookup and update, traverse the list of trees recursively and use the sizes of the trees to locate the correct element.
+	 - Leverage recursive processing and persistent data structure techniques to ensure immutability and efficiency.
+
+G) Leftist Min-Heap # Topic
+	Comprehensive Leftist Min-Heap Implementation Task
+
+The Leftist Min-Heap is a priority queue that supports efficient merging by maintaining the leftist property: each node stores a rank (the distance to the nearest empty subtree along the right spine) and ensures that the left child’s rank is at least as high as the right child’s. This structure guarantees that the right spine remains short, allowing for efficient merge operations.
+
+Functional Requirements:
+	1.	empty(heap): Checks if the Leftist Min-Heap is empty.
+	 - Input: A Leftist Min-Heap.
+	 - Output: true if the heap is empty, false otherwise.
+	2.	insert(heap, element): Inserts an element into the heap.
+	 - Input: A Leftist Min-Heap and an element.
+	 - Output: A new Leftist Min-Heap with the element inserted.
+	3.	findMin(heap): Retrieves the minimum element from the heap.
+	 - Input: A Leftist Min-Heap.
+	 - Output: The minimum element (at the root) without modifying the heap.
+	 - Input: A Leftist Min-Heap.
+	 - Output: A new Leftist Min-Heap with the minimum element removed.
+	5.	merge(heap1, heap2): Merges two Leftist Min-Heaps into one.
+	 - Input: Two Leftist Min-Heaps.
+	 - Output: A new Leftist Min-Heap that contains all elements from both input heaps.
+	6.	toList(heap): Converts the Leftist Min-Heap into a sorted list.
+	 - Input: A Leftist Min-Heap.
+	 - Output: A list of elements sorted in ascending order.
+	7.	fromList(list): Constructs a Leftist Min-Heap from a list of elements.
+	 - Input: A standard list of elements.
+	 - Output: A Leftist Min-Heap containing all the elements.
+
+Task Instructions:
+	1.	Functional Programming Principles:
+	 - Implement all functions in a purely functional manner without mutating existing structures.
+	 - Utilize recursive definitions where appropriate, particularly in the merge, insert, and deleteMin operations.
+	2.	Testing:
+	 - Write comprehensive tests to validate the correctness of each function.
+	 - Consider edge cases, such as:
+	 - Inserting into or deleting from an empty heap.
+	 - Merging an empty heap with a non-empty heap.
+	 - Consistent behavior when duplicate elements are inserted.
+
+Leftist Min-Heap Properties:
+	 - Heap Order: The root of the heap always contains the smallest element.
+	 - Leftist Property: Each node stores a rank (the distance to the nearest leaf along the right child), and for every node, the rank of its left child is at least as high as that of its right child. This property minimizes the length of the right spine, which is key for efficient merging.
+	 - Immutability: All operations should yield new heaps without altering the existing ones.
+
+Challenge Extension (Optional):
+	1.	mergeAll(heaps):
+	 - Merge a list of Leftist Min-Heaps into a single heap, preserving all elements.
+	2.	size(heap):
+	 - Compute and return the total number of elements i
+
+Example Use Case:
+	 - Begin with an empty Leftist Min-Heap and perform the following operations:
+	1.	Insert Elements: Use insert to add elements (e.g., [5, 3, 8, 1, 4]) into the heap.
+	2.	Find Minimum: Retrieve the smallest element using findMin.
+	3.	Delete Minimum: Remove the minimum element using deleteMin and verify that the heap order is maintained.
+	4.	Merge Heaps: Create two separate heaps and merge them using merge, ensuring the leftist property is preserved.
+	5.	Conversion: Convert the heap to a sorted list using toList and check the correctness of the output.
+	6.	Edge Cases: Test operations on an empty heap and during duplicate insertions.
+
+Hint for Learners:
+	 - Focus on the merge operation, which is the cornerstone of all heap operations.
+	 - In insert, consider that merging a singleton heap with the existing heap can simplify the implementation.
+	 - Maintain the leftist property by comparing the ranks of the left and right children after each merge, swapping them if necessary to keep the right spine as short as possible.
