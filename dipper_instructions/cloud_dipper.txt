@@ -34,7 +34,7 @@ Questions must not combine multiple perspectives or sub-questions.
     b) Explains its purpose completely, adhering to the same restriction against code or code-like symbols.
 
 10. Assessment Failure Requirements:
-     Under all conditions where a learner provides two consecutive responses that are incomplete, incorrect, include any code, code-like symbols, or figurative expressions such as analogies or metaphors, or do not adequately address the question's requirements, immediately terminate the assessment and recommend Commander for further preparation and conclude the assessment for that topic. Do not provide additional opportunities for clarification or improvement.
+     Under all conditions where a learner provides two consecutive responses that are incomplete, incorrect, include any code, code-like symbols, or figurative expressions such as analogies or metaphors, or do not adequately address the question's requirements, immediately terminate the assessment and recommend Cloudy with Dropplets for further preparation and conclude the assessment for that topic. Do not provide additional opportunities for clarification or improvement.
 
 11. Avoid Direct Commands:
     Guide learners through the assessment process without instructing them on what to say. Frame each question as a stand-alone prompt, addressing a single idea or topic, and encourage the learner to articulate their understanding independently.

@@ -205,45 +205,35 @@ D) State Pattern# Topic
 	20. Create a stateful function that manages a queue of tasks. Allow adding tasks to the queue and marking them as completed.
 
 E) Lazy Computation Pattern # Topic
-	1. Write a lazy stream that generates an infinite sequence of integers starting from 1. Test it by retrieving the first 10 numbers.
+	1. Write a lazy stream that generates an infinite sequence of integers, one at a time, starting from 1. Test it by retrieving the first 10 numbers.
 
-	2. Create a lazy stream that generates an infinite sequence of even numbers. Test it by fetching the first 5 even numbers.
+	2. Create a lazy stream that generates an infinite sequence of even numbers, one at a time. Test it by fetching the first 5 even numbers.
 
-	3. Implement a lazy Fibonacci sequence generator. Test it by retrieving the first 10 numbers in the sequence.
+	3. Implement a lazy Fibonacci sequence generator. Test it by retrieving the first 10 numbers in the sequence, one at a time.
 
-	4. Write a lazy function that generates an infinite stream of random numbers within a given range. Test it by fetching 5 random numbers.
+	4. Write a lazy function that generates an infinite stream of random numbers within a given range. Test it by fetching 5 random numbers, one at a time.
 
-	5. Create a lazy stream that generates all prime numbers. Test it by retrieving the first 10 primes.
+	5. Create a lazy stream that generates all prime numbers, one at a time. Test it by retrieving the first 10 primes.
 
-	6. Implement a lazy computation that generates an infinite sequence of powers of 2. Test it by fetching the first 8 powers.
+	6. Implement a lazy computation that generates an infinite sequence of powers of 2, one at a time. Test it by fetching the first 8 powers.
 
-	7. Write a lazy function that generates an infinite sequence of alternating positive and negative integers (e.g., 1, -2, 3, -4, ...).
+	7. Write a lazy function that generates an infinite sequence of alternating positive and negative integers (e.g., 1, -2, 3, -4, ...), o
 
-	8. Create a lazy computation that generates a repeating sequence of characters from a given string. Test it with "abc".
+	8. Implement a lazy stream that reads a file line by line, one at a time. Test it with a small text file.
 
-	9. Implement a lazy stream that reads a file line by line. Test it with a small text file.
+	9. Write a lazy function that generates an infinite stream of timestamps, one at a time, starting from the current time, spaced 1 second apart.
 
-	10. Write a lazy function that generates an infinite stream of timestamps, starting from the current time, spaced 1 second apart.
+	11. Create a lazy computation that generates each permutation of a given list, one at a time. Test it with a small list.
 
-	11. Create a lazy computation that generates all permutations of a given list. Test it with a small list.
+	12. Implement a lazy function that generates an infinite sequence of squares of integers, one at a time. Test it by fetching the first 5 squares.
 
-	12. Implement a lazy function that generates an infinite sequence of squares of integers. Test it by fetching the first 5 squares.
+	13. Write a lazy function that generates an infinite stream of words from a paragraph of text, one at a time. Test it with a short paragraph.
 
-	13. Write a lazy function that generates an infinite stream of words from a paragraph of text. Test it with a short paragraph.
+	14. Implement a lazy stream that generates a sequence of natural numbers, one at a time, but filters out those divisible by 3. Test it by retrieving the first 10 numbers.
 
-	14. Create a lazy computation that generates a sequence of alternating uppercase and lowercase characters from an input string. Test it with "lazy".
+	15. Write a lazy function that generates infinite circular shifts, one at a time, of a given list. Test it with [1, 2, 3].
 
-	15. Implement a lazy stream that generates a sequence of natural numbers but filters out those divisible by 3. Test it by retrieving the first 10 numbers.
-
-	16. Write a lazy function that generates all combinations of a given list. Test it with a small list.
-
-	17. Create a lazy computation that fetches data from a web API, one result at a time. Test it by simulating API calls.
-
-	18. Implement a lazy stream that simulates a queue where elements are generated lazily. Test it with adding and consuming elements.
-
-	19. Write a lazy function that generates infinite circular shifts of a given list. Test it with [1, 2, 3].
-
-	20. Create a lazy computation that generates an infinite stream of data based on a recursive formula. Test it with a formula like `x(n) = x(n-1) + 2`.
+	16. Create a lazy computation that generates an infinite stream of data, one at a time, based on a recursive formula. Test it with a formula like `x(n) = x(n-1) + 2`.
 
 F) Chaining Pattern # Topic
 	1. Write a chaing function that chains two lambdas: one that adds 2 to a number and another that multiplies it by 3. Test it with a few numbers.
