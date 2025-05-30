@@ -1,0 +1,65 @@
+A) Lambdas# Topic
+	1. Write a function that accepts a list and a lambda function, and returns a new list containing only the elements for which the lambda returns True.
+	2. Write a function that accepts two numbers and a lambda function, and returns the result of applying the lambda to these two numbers.
+	3. Write a function that accepts a list and a lambda function, and returns a new list where each element is the result of applying the lambda to the corresponding element of the input list.
+	4. Write a function that accepts a list and a lambda predicate, and returns the count of elements in the list that satisfy the lambda condition.
+	5. Write a function that accepts a list and a lambda comparator, and returns the list sorted according to the lambda-defined order.
+	6. Write a function that accepts a list and a lambda function as a key extractor, and returns the maximum element based on the key provided by the lambda.
+	7. Write a function that accepts a list and a lambda function, applies the lambda to transform each element, and then returns the sum of the transformed elements.
+	8. Write a function that accepts a dictionary and a lambda function, and returns a new dictionary where the keys and/or values have been transformed by the lambda.
+	9. Write a function that accepts a list and a lambda predicate, and returns True if at least one element in the list satisfies the lambda condition.
+	10. Write a function that accepts a list and a lambda predicate, and returns True only if every element in the list satisfies the lambda condition.
+	11. Write a function that accepts an initial value, a lambda function, and a positive integer n, then applies the lambda function iteratively n times to the initial value and returns the final result.
+	12. Write a function that accepts a list and a lambda function, and returns the number of elements for which the lambda returns True.
+	13. Write a function that accepts a list, a lambda function that takes two parameters, and uses the lambda to reduce the list to a single value (similar to a fold or reduce operation).
+	14. Write a function that accepts a list and a lambda function, and returns a dictionary mapping each original element to its transformed value as produced by the lambda.
+	15. Write a function that accepts a list of numbers and a lambda function that checks for evenness, and returns a new list containing only the even numbers as determined by the lambda.
+	16. Write a function that accepts a string and a lambda function, and returns the string after applying the lambda to transform it (for example, changing case or reversing the string).
+	17. Write a function that accepts a list and a lambda function as a key extractor, and returns the element with the minimum key as determined by the lambda.
+	18. Write a function that accepts two lists and a lambda function that combines two elements, and returns a new list where each element is the result of applying the lambda to corresponding elements from both lists.
+	19. Write a function that accepts a list and a lambda function for transformation, and returns a tuple containing the list of transformed elements and the sum of these elements.
+	20. Write a function that accepts a list of numbers and a lambda predicate, and returns the first element in the list for which the lambda returns True.
+
+B) BIFs with Lambdas# Topic
+	1. Write a function that accepts a list of dictionaries and uses sorted with a lambda as the key to sort the list by a specified dictionary key.
+	2. Write a function that takes a list of integers and uses filter with a lambda to return only the even numbers.
+	3. Write a function that accepts a list of numbers and uses map with a lambda to return a new list where each number is squared.
+	4. Write a function that takes a list of numbers and uses functools.reduce with a lambda to compute the product of all elements.
+	5. Write a function that accepts a list of strings and uses sorted with a lambda key to sort the strings by their length.
+	6. Write a function that takes a list of tuples and uses max with a lambda key to find the tuple with the largest second element.
+	7. Write a function that accepts a list of numbers and uses min with a lambda key to find the element with the smallest absolute value.
+	8. Write a function that takes a list of tuples and uses sorted with a lambda key to sort the list by the sum of the tuple’s elements.
+	9. Write a function that accepts a list of strings and uses filter with a lambda to return only the strings that start with a specific letter.
+	10. Write a function that takes a list of integers and uses map with a lambda to convert each integer to its string representation.
+	11. Write a function that accepts a list of numbers and uses sorted with a lambda key to order the numbers by their absolute value.
+	12. Write a function that takes a list of positive integers, converts each to its digit list, and uses functools.reduce with a lambda to sum all digits.
+	13. Write a function that accepts a list of strings and uses filter with a lambda to remove any empty strings from the list.
+	14. Write a function that takes a list of file paths and uses sorted with a lambda key to sort them by their file extension.
+	15. Write a function that accepts a list of strings and uses map with a lambda to return a new list with all strings stripped of leading and trailing whitespace.
+	16. Write a function that takes a list of numbers and uses functools.reduce with a lambda to compute the cumulative difference (i.e., subtract each subsequent number from the previous result).
+	17. Write a function that accepts a list of words and uses filter with a lambda to return only the palindromic words.
+	18. Write a function that takes a list of tuples and uses sorted with a lambda key to sort the tuples by the sum of their elements in descending order.
+	19. Write a function that accepts a list of strings and uses max with a lambda key to find the string containing the highest number of vowels.
+	20. Write a function that takes a list of temperatures in Celsius and uses map with a lambda to convert each temperature to Fahrenheit.
+
+C) Lambda Factories# Topic
+	1. Write a function that accepts two parameters, a multiplier and an increment, and returns a lambda that takes a number and returns the product of the number and the multiplier plus the increment.
+	2. Write a function that accepts two parameters, a lower bound and an upper bound, and returns a lambda that takes a number and checks whether it falls within the inclusive range.
+	3. Write a function that accepts two strings, a prefix and a suffix, and returns a lambda that takes another string and returns it with the prefix prepended and the suffix appended.
+	4. Write a function that accepts a key and a default value, and returns a lambda that takes a dictionary and returns the value for that key or the default if the key is absent.
+	5. Write a function that accepts a list and an index, and returns a lambda that takes an element and returns a new list with the element inserted at the specified index.
+	6. Write a function that accepts two functions, f and g, and returns a lambda that takes an argument and applies f to it, then applies g to the result.
+	7. Write a function that accepts a threshold and a multiplier, and returns a lambda that takes a number and returns the number multiplied by the multiplier if it exceeds the threshold, otherwise returns the original number.
+	8. Write a function that accepts a divisor and a remainder, and returns a lambda that takes a number and returns True if the number modulo the divisor equals the remainder.
+	9. Write a function that accepts a base value and an exponent increment, and returns a lambda that takes an exponent and returns the base raised to the power of the sum of the exponent and the exponent increment.
+	10. Write a function that accepts a factor and an offset, and returns a lambda that takes a list of numbers and returns a new list where each element is multiplied by the factor and then increased by the offset.
+	11. Write a function that accepts a transformation function and an additional parameter, and returns a lambda that takes an input value and applies the transformation function with the input value and the additional parameter.
+	12. Write a function that accepts a condition function and a default value, and returns a lambda that takes an input and returns the input if the condition is met, otherwise returns the default value.
+	13. Write a function that accepts a comparator function and a fixed value, and returns a lambda that takes another value and returns the result of comparing it with the fixed value using the comparator.
+	14. Write a function that accepts a list of numbers and a target sum, and returns a lambda that takes an index and returns True if the number at that index added to the next element equals the target sum.
+	15. Write a function that accepts a pattern string and a replacement string, and returns a lambda that takes another string and replaces all occurrences of the pattern with the replacement.
+	16. Write a function that accepts a base function and a multiplier, and returns a lambda that takes an input and returns the result of the base function applied to the input, multiplied by the multiplier.
+	17. Write a function that accepts a delay value and a count, and returns a lambda that takes a message and returns a string that simulates the message being repeated with the delay inserted between repetitions.
+	18. Write a function that accepts two lists, and returns a lambda that takes an element and returns True if the element is present in both lists.
+	19. Write a function that accepts a default string and a conversion function, and returns a lambda that takes a string and returns the converted string if non-empty, or the default string otherwise.
+	20. Write a function that accepts a multiplier and a divisor, and returns a lambda that takes a number and returns the result of multiplying the number by the multiplier and then dividing by the divisor.

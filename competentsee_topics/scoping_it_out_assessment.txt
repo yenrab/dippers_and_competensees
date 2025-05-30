@@ -1,0 +1,65 @@
+A) Functions and Intent# Topic
+	1. Write a function that accepts two parameters, adds them together, and returns (or prints) their sum.
+	2. Write a function that accepts an integer parameter and prints whether the number is even or odd.
+	3. Write a function that takes two parameters (start and end) and prints all the numbers in that range.
+	4. Write a function that accepts a non-negative integer parameter and returns its factorial.
+	5. Write a function that takes a positive integer n as a parameter and returns the nth Fibonacci number.
+	6. Write a function that accepts a string parameter and returns the reversed string.
+	7. Write a function that takes a string parameter and returns the count of vowels in the string.
+	8. Write a function that accepts a list of numbers as a parameter and returns the largest number in the list.
+	9. Write a function that accepts a string and a character as parameters, then returns the count of that character in the string.
+	10. Write a function that takes an integer parameter and returns whether the number is prime.
+	11. Write a function that accepts an integer parameter and prints its multiplication table.
+	12. Write a function that accepts a non-negative integer parameter and returns the sum of its digits.
+	13. Write a function that accepts a string parameter and returns whether it is a palindrome.
+	14. Write a function that takes a temperature in Celsius as a parameter and returns its Fahrenheit equivalent.
+	15. Write a function that accepts three parameters (principal, rate, time) and returns the calculated simple interest.
+	16. Write a function that accepts an upper bound as a parameter and returns a list of even numbers from 1 up to that bound.
+	17. Write a function that accepts a sentence (string) as a parameter and returns the number of words in the sentence.
+	18. Write a function that accepts two lists of numbers as parameters and returns a list of their common elements.
+	19. Write a function that accepts a positive integer n as a parameter and returns a list containing the first n prime numbers.
+	20. Write a function that accepts two parameters (base and exponent) and returns the result of raising the base to the exponent using iteration.
+
+B) Function Details# Topic
+	1. Write a variadic function that accepts multiple numbers and returns their sum.
+	2. Write a function that accepts two numbers—with the second number having a default value—and returns their product.
+	3. Write a variadic function that accepts multiple strings and concatenates them, using a default separator parameter if not provided.
+	4. Write a function that accepts a list of numbers and a variadic list of additional numbers, then returns the maximum value among all provided numbers.
+	5. Write a function that accepts a format string and a variadic number of values, then prints the formatted output.
+	6. Write a variadic function that accepts multiple integers and returns a list containing the square of each number.
+	7. Write a function that calculates the power of a number, with the base as a parameter and the exponent as a parameter with a default value of 2.
+	8. Write a variadic function that accepts an arbitrary number of numeric arguments and returns their average, handling the case of no arguments by returning a default value.
+	9. Write a function that accepts a string and a variadic list of substrings, returning True if the string contains all the given substrings.
+	10. Write a function that accepts a variadic number of keyword arguments and prints each key-value pair.
+	11. Write a function that accepts a name and uses a default greeting message to print a personalized greeting.
+	12. Write a variadic function that accepts multiple lists and returns a single list that concatenates all the provided lists.
+	13. Write a function that accepts a number and a default parameter indicating whether to return its absolute value or not.
+	14. Write a function that accepts width and height parameters with default values to calculate the area of a rectangle.
+	15. Write a variadic function that accepts multiple numbers and returns their product.
+	16. Write a function that calculates a discount on a price, with a default discount rate if none is specified.
+	17. Write a variadic function that accepts multiple strings and returns a dictionary mapping each string to its length.
+	18. Write a function that computes the area of a circle, accepting the radius as a parameter with a default value.
+	19. Write a variadic function that accepts an arbitrary number of integers and returns a tuple containing the minimum, maximum, and sum of the numbers.
+	20. Write a function that accepts a string and includes default parameters to optionally convert it to uppercase or lowercase before returning the result.
+
+C) Using BIFs# Topic
+	1. Write a function that takes a list and returns its length using len.
+	2. Write a function that takes a list of numbers and returns the maximum value using max.
+	3. Write a function that takes a list of numbers and returns the minimum value using min.
+	4. Write a function that takes a list of numbers and returns the sum of its elements using sum.
+	5. Write a function that takes a list and returns a sorted version of it using sorted.
+	6. Write a function that takes a number and returns its absolute value using abs.
+	7. Write a function that takes a positive integer n and returns a list of integers from 0 to n-1 using range.
+	8. Write a function that takes a list of numbers and returns a tuple containing the minimum and maximum values using min and max.
+	9. Write a function that takes a list of numbers and returns the average value by combining sum and len.
+	10. Write a function that takes a list of integers and returns a sorted list of their absolute values using abs and sorted.
+	11. Write a function that takes a positive integer n and returns a list of the first n even numbers using range.
+	12. Write a function that takes a list of numbers and returns the difference between the maximum and minimum values using max and min.
+	13. Write a function that takes a list of numbers and returns them sorted in descending order using sorted.
+	14. Write a function that takes a list of integers and returns a list of the absolute differences between consecutive elements using abs and range.
+	15. Write a function that takes a list of numbers and returns the second smallest number by utilizing sorted.
+	16. Write a function that takes a list of numbers and returns a list of cumulative sums, applying range to slice the list and sum to compute partial sums.
+	17. Write a function that takes a positive integer n and returns a list of squares of numbers from 0 to n-1 using range.
+	18. Write a function that takes a list of numbers and returns True if the sum of its elements exceeds 100 using sum.
+	19. Write a function that takes two numbers and returns the absolute difference between them using abs.
+	20. Write a function that takes a list of strings and returns the length of the longest string by combining len with max.

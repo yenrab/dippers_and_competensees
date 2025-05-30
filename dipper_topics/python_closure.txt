@@ -1,0 +1,16 @@
+A) Lambdas# Topic Name
+	1) Description: Lambda functions are functions that have no defined name and capture the values of variables where they are created for later use. They are cosidered data of a type that is a behavior. The can be stored in variables and passed as parameters to other functions.
+	2) Why: By having Lambda functions be considered data, you make your code more flexible, more reusable, and more specific all at the same time. The code in the function that has a lambda as a parameter gets hardened quicker, that is the bugs are exposed and fixed quicker, since that function's code can be reused more frequently than if various versions of the function were created. 
+
+	Storing lambda functions in variables means I can store them in data structurs too. For example, they could be in a dictionary and looked up rather than be hard coded. This dramatically increases the code's flexibility and readability while decreasing bug counts.
+	3) When: Any time you can use a lambda and functions that have lambda's as parameters you should, as long as this choice makes the code more readable.
+
+B) BIFs with lambdas# Topic Name
+	1) Description: There are several Python BIFs(Built-In-Funtions) that require lambdas as a parameter. These include, but are not limited to, the map, filter, reduce, sorted, min, and max functions. 
+	2) Why: These BIFs are prebuilt to reduce the amount of code a programmer has to write. They are as fast or faster than anything a programmer might write to accomplish the same task. They are already debugged and hardened.
+	3) When: Any time these functions can be used they should be used. 
+
+C) Lambda Factories# Topic Name
+	1) Description: A function factory is a function that generates functions for the programmer. The function generated captures one or more of the factory function's parameters to use later. The value returned from a function factory is a lambda. The lambda may have zero or more parameters. A function factory is a type of template. The factory contains the common code that will be injected into the lambda generated. It also adds the details that consist of the parameters the function factory is passed.
+	2) Why: Templates are powerful things. They let programmers focus on the important parts of their code instead of worrying about all the details. This speeds up development, makes the code more flexible, and helps reduce the number of bugs found in code.
+	3) When: Any time there is a set of behaviors that your application needs that differ only in details, a function factory should be used to generate the lambdas that will be the entire set of functions needed. 

@@ -1,0 +1,319 @@
+A) Lists
+1) Node Structure: {value,next_node}
+   Example: {bob,{sue,{joe,nil}}}
+
+2) Manipulation and Access Function Pseudocode
+   a) Add
+      - Specification: -spec add :: Any List -> List
+      - Pseudocode: add :: e current_list -> {e,current_list}
+   b) Pop
+      - Specification: -spec pop :: List -> List
+      - Pseudocode:
+         pop :: nil -> nil;
+         pop :: {element,sub_list} -> sub_list
+   c) First
+      - Specification: -spec first :: List -> Any
+      - Pseudocode: first :: {e,sub_list} -> e
+   d) Contains
+      - Specification: -spec contains :: Any List -> Boolean
+      - Pseudocode:
+         contains :: p nil -> false;
+         contains :: p {e,sub_list} when p == e -> true;
+         contains :: p {_,sub_list} -> contains p sub_list
+
+B) Binary Trees
+1) Node Structure: {value,next_left,next_right}
+   Example: {10,{2,nil,nil},{15,nil,nil}}
+
+2) Manipulation and Access Function Pseudocode
+   a) Add
+      - Specification: add :: Any BST -> BST
+      - Pseudocode:
+         add :: e nil -> {e,nil,nil};
+         add :: e {v,next_left,next_right} when e < v -> {v,(add e next_left),next_right};
+         add :: e {v,next_left,next_right} -> {v,next_left,(add e next_right)}
+   b) Contains
+      - Specification: contains :: Any, BST, (comp Any Any -> Integer) -> Boolean
+      - Pseudocode:
+         contains :: s nil comp -> false;
+         contains :: s {v,next_left,next_right} comp when (comp s v) = 0 -> true;
+         contains :: s {v,next_left,next_right} comp when (comp s v) = -1 -> contains s next_left comp;
+         contains :: s {v,next_left,next_right} comp -> contains s next_right comp
+
+C) Red-Black Trees
+1) Node Structure: {color,value,next_left,next_right}
+   Example: {black,10,{red,2,nil,nil},{red,15,nil,nil}}
+
+2) Manipulation and Access Function Pseudocode
+   a) Contains
+      - Specification: contains :: Any, RBT, (comp Any Any -> Integer) -> Boolean
+      - Pseudocode:
+         contains :: s nil comp -> false;
+         contains :: s {color,v,next_left,next_right} comp when (comp s v) = 0 -> true;
+         contains :: s {color,v,next_left,next_right} comp when (comp s v) = -1 -> contains s next_left comp;
+         contains :: s {color,v,next_left,next_right} comp -> contains s next_right comp
+   b) Add
+      - Specification: add :: RBT Any (comp Any Any -> Integer) -> RBT
+      - Pseudocode:
+         add :: nil e comparitor -> {black,e,nil,nil};
+         add :: RBT e comparitor ->
+            {_,next_l,next_r} = rbt_add_helper RBT e comparitor
+            {black,next_l,next_r}
+   c) rbt_add_helper
+      - Specification: add_helper :: node Any (comp Any Any -> Integer) -> root_node
+      - Pseudocode:
+         rbt_add_helper :: nil e comparitor -> {red,e,nil,nil};
+         rbt_add_helper :: {color,value,next_l,next_r} e comparitor when comparitor e value = -1 -> balance_l {color,value,(add_helper next_l e comparitor),next_r};
+         rbt_add_helper :: {color,value,next_l,next_r} e comparitor otherwise -> balance_r {color,value,next_l,(add_helper next_r e comparitor)}
+   d) balance_l
+      - Specification: balance_l :: {color,Any,RBT,RBT} -> RBT
+      - Pseudocode:
+         balance_l :: {black,value,{red,a_value,{red,b_value,b_left,b_right},a_right},next_r} -> {red,a_value,{black,b_value,b_left,b_right},{black,value,a_right,next_r}};
+         balance_l :: {black,value,{red,a_value,a_left,{red,b_value,b_left,b_right}},next_r} -> {red,b_value,{black,a_value,a_left,b_left},{black,value,b_right,next_r}};
+         balance_l :: RBT -> RBT
+   e) balance_r
+      - Specification: balance_r :: {color,Any,RBT,RBT} -> RBT
+      - Pseudocode:
+         balance_r :: {black,value,next_l,{red,a_value,a_left,{red,b_value,b_left,b_right}}} -> {red,a_value,{black,value,next_l,a_left},{black,b_value,b_left,b_right}};
+         balance_r :: {black,value,next_l,{red,a_value,{red,b_value,b_left,b_right},a_right}} -> {red,b_value,{black,value,next_l,b_left},{black,a_value,b_right,a_right}};
+         balance_r :: RBT -> RBT
+
+D) Leftist Min-Heaps
+1) Node Structure: {rank,value,next_l,next_r}
+
+2) Manipulation and Access Function Pseudocode
+   a) get_min
+      - Specification: get_min :: heap -> e
+      - Pseudocode:
+         get_min :: nil -> nil;
+         get_min :: {rank,value,next_l,next_r} -> value
+   b) insert
+      - Specification: insert :: e heap -> heap
+      - Pseudocode:
+         insert :: nil nil -> nil;
+         insert :: value heap -> merge {1,value,nil,nil} heap
+   c) merge
+      - Specification: merge :: heap heap -> heap
+      - Pseudocode:
+         merge :: nil heap -> heap;
+         merge :: heap nil -> heap;
+         merge :: h i ->
+            {h_rank, h_value, h_left, h_right} = h
+            {i_rank, i_value, il_sub, ir_sub} = i
+            case
+              h_value =< i_value ->
+                build_node h_value h_left (merge h_right i)
+              otherwise ->
+                build_node i_value i_left (merge h i_right)
+   d) build_node
+      - Specification: build_node :: e heap heap -> heap
+      - Pseudocode:
+         build_node :: value h i ->
+            case
+              rank h >= rank i ->
+                {(rank i)+1,value,h,i};
+              otherwise ->
+                {(rank a)+1,value,i,h}
+   e) rank
+      - Specification: rank :: heap -> integer
+      - Pseudocode:
+         rank :: nil -> 0;
+         rank :: {r,value,left,right} -> r
+   f) remove_min
+      - Specification: remove_min :: heap -> element
+      - Pseudocode:
+         remove_min :: nil -> nil;
+         remove_min :: {rank,value,left,right} -> merge left right
+
+E) Queue
+1) Node Structure: None
+
+2) Manipulation and Access Function Pseudocode
+   a) empty
+      - Specification: empty :: queue -> boolean
+      - Pseudocode:
+         empty :: {[],[]} -> true;
+         empty :: queue -> false
+   b) head
+      - Specification: head :: queue -> element or nil
+      - Pseudocode:
+         head :: nil -> nil;
+         head :: {[],[]} -> nil;
+         head :: {[],[remaining:last]} -> last;
+         head :: {[h|t],rear} -> h
+   c) tail
+      - Specification: tail :: queue -> element or nil
+      - Pseudocode:
+         tail :: nil -> nil;
+         tail :: {[],[]} -> nil;
+         tail :: {[remaining:last],[]} -> last;
+         tail :: {front,[h|t]} -> h
+   d) enqueue
+      - Specification: enqueue :: queue e -> queue
+      - Pseudocode:
+         enqueue :: {[],[]} element -> {[element],[]};
+         enqueue :: {front,rear} element -> {front,[element]++rear}
+   e) dequeue
+      - Specification: dequeue :: queue -> queue
+      - Pseudocode:
+         dequeue :: {[],[]} -> {[],[]};
+         dequeue :: {[h|t],rear} ->
+            case
+              when (empty t) -> {(reverse rear),[]};
+              otherwise -> {t,rear}
+
+F) Deques
+1) Node Structure: None
+
+2) Manipulation and Access Function Pseudocode
+   a) empty
+      - Specification: empty :: deque -> boolean
+      - Pseudocode:
+         empty :: {[],[]} -> true;
+         empty :: deque -> false
+   b) head
+      - Specification: head :: deque -> element or nil
+      - Pseudocode:
+         head :: nil -> nil;
+         head :: {[],[]} -> nil;
+         head :: {[],[remaining:last]} -> last;
+         head :: {[h|t],rear} -> h
+   c) tail
+      - Specification: tail :: deque -> element or nil
+      - Pseudocode:
+         tail :: nil -> nil;
+         tail :: {[],[]} -> nil;
+         tail :: {[remaining:last],[]} -> last;
+         tail :: {front,[h|t]} -> h
+   d) enqueue
+      - Specification: enqueue :: deque e -> deque
+      - Pseudocode:
+         enqueue :: {[],[]} element -> {[element],[]};
+         enqueue :: {front,rear} element -> {front,[element]++rear}
+   e) dequeue
+      - Specification: dequeue :: deque -> deque
+      - Pseudocode:
+         dequeue :: {[],[]} -> {[],[]};
+         dequeue :: {[h|t],rear} ->
+            case
+              when (empty t) -> {(reverse rear),[]};
+              otherwise -> {t,rear}
+   f) enqueue_front
+      - Specification: enqueue_front :: deque e -> deque
+      - Pseudocode:
+         enqueue_front :: {front,rear} element -> {[element]++front,rear}
+   g) dequeue_back
+      - Specification: dequeue_back :: deque -> deque
+      - Pseudocode:
+         dequeue_back :: {[],[]} -> {[],[]};
+         dequeue_back :: {[remaining:last],[]} -> {reamaining,[]};
+         dequeue_back :: {f,[h|t]} -> {f,t}
+
+G) Tries
+1) Node Structure: [a ↫ trie]
+
+2) Manipulation and Access Pseudocode
+   a) contains
+      - Specification: contains :: to_find trie -> boolean
+      - Pseudocode:
+         contains :: [] trie when end ∈ trie_keys -> true;
+         contains :: [] trie -> false;
+         contains :: [h|t] trie when h ∉ trie_keys -> false;
+         contains :: [h|t] trie -> sub_trie = h ↠ trie; contains t sub_trie
+   b) add
+      - Specification: add :: to_add trie -> trie
+      - Pseudocode:
+         add :: [] trie -> trie ↞ end nil;
+         add :: [h|t] trie when h ∈ trie_keys -> sub_trie <- h ↠ trie; trie ↞ h (add t sub_trie);
+         add :: [h|t] trie otherwise -> trie ↞ h (build_branch t)
+   c) build_branch
+      - Specification: build_branch :: to_add -> trie
+      - Pseudocode:
+         build_branch :: [] -> [end ↫ none];
+         build_branch :: [h|t] -> [h ↫ build_branch t]
+
+H) Random Access Lists
+1) Structure: [{leaf_count,next_l,next_r},{leaf_count,next_l,next_r},...]
+
+2) Manipulation and Access Pseudocode
+   a) get
+      - Specification: get :: RAL index -> element
+      - Pseudocode:
+         get :: [] index -> none;
+         get :: [{element,none,none}|t] 0 -> element;
+         get :: RAL index ->
+            {skipped_indices, tree} = find_tree RAL index 0
+            case
+              tree == none -> none;
+              {leaf_count, _, _} = tree ->
+                find_using_traversal_list tree (build_traversal_list index − skipped_indices leaf_count)
+
+   b) find_tree
+      - Specification: find_tree :: RAL index accumulator -> {boolean,tree}
+      - Pseudocode:
+         find_tree :: [] index accumulator -> false;
+         find_tree :: [h|t] 0 accumulator -> {0,h};
+         find_tree :: [{leaf_count,none,none}|t] index accumulator ->
+            find_tree t index accum + 1;
+         find_tree :: [{leaf_count,next_l,next_r}|t] index accumulator when leaf_count < index - accumulator ->
+            find_tree t index accumulator + leaf_count;
+         find_tree :: [h|t] index accumulator -> {accumulator,h}
+
+   c) build_traversal_list
+      - Specification: build_traversal_list :: integer integer -> [integer]
+      - Pseudocode:
+         build_traversal_list :: number 1 -> [];
+         build_traversal_list :: number bit_space ->
+            lesser_power = bit_space ÷ 2
+            case
+              number ≥ lesser_power -> [1] ++ (build_traversal_list (number - lesser_power) lesser_power);
+              otherwise -> [0] ++ (build_traversal_list number lesser_power)
+
+   d) find_using_traversal_list
+      - Specification: find_using_traversal_list :: tree traversal_list -> element
+      - Pseudocode:
+         find_using_traversal_list :: none traversal_list -> none;
+         find_using_traversal_list :: {element,none,none} [] -> element;
+         find_using_traversal_list :: {element,next_l,next_r} [0|t] ->
+            find_using_traversal_list next_l t;
+         find_using_traversal_list :: {element,next_l,next_r} [1|t] ->
+            find_using_traversal_list next_r t
+
+   e) update
+      - Specification: update :: RAL index value accumulator -> RAL
+      - Pseudocode:
+         update :: [] index value accumulator -> error_indicator;
+         update :: [{_,none,none}] 0 value accumulator -> [{value, none, none}];
+         update :: [{leaf_value,none,none}|t] index value accumulator ->
+            [{leaf_value, none, none}] ++ (update t index value (accumulator + 1));
+         update :: [{leaf_count, next_l, next_r}|t] index value accumulator when leaf_count < index - accumulator ->
+            [{leaf_count, next_l, next_r}] ++ (update t index value (accumulator + leaf_count));
+         update :: [h|t] index value accumulator ->
+            [replace h (build_traversal_list (index - accumulator)) value] ++ t
+
+   f) replace
+      - Specification: replace_using_traversal_list :: tree traversal_list value -> node
+      - Pseudocode:
+         replace_using_traversal_list :: none traversal_list value -> error_indicator;
+         replace_using_traversal_list :: {old_value,none,none} [] value -> {value, none, none};
+         replace_using_traversal_list :: {old_value,next_l,none} [] value -> replace_using_traversal_list next_l [] value;
+         replace_using_traversal_list :: {old_value,none,next_r} [] value -> replace_using_traversal_list next_r [] value;
+         replace_using_traversal_list :: {weight,next_l,next_r} [0|t] value -> {weight,(replace_using_traversal_list next_l t value),next_r};
+         replace_using_traversal_list :: {weight,next_l,next_r} [1|t] value -> {weight,next_l,(replace_using_traversal_list next_r t value)}
+
+   g) cons
+      - Specification: cons :: value RAL -> RAL
+      - Pseudocode:
+         cons :: value none -> (cons [] value);
+         cons :: value [] -> [{1,value,none,none}];
+         cons :: value [{node_value,none,none}|t] -> merge {2,{value,none,nil},{node_value,none,none}} t;
+         cons :: value RAL -> [{value,none,none}] ++ RAL
+
+   h) merge
+      - Specification: merge :: tree RAL -> RAL
+      - Pseudocode:
+         merge :: tree [] -> [tree];
+         merge :: {tree_weight,t_next_l,t_next_r} [{head_weight,h_next_l,h_next_r}|t] when tree_weight = head_weight ->
+            merge {tree_weight + head_weight, {tree_weight,t_next_l,t_next_r}, {head_weight,h_next_l,h_next_r}} t;
+         merge :: tree RAL -> [tree] ++ RAL
+

@@ -1,0 +1,149 @@
+A) Problem Decomposition# Topic
+	1. Use problem decomposition to break down the process of planning, shopping for, cooking, and storing a week’s worth of self-cooked meals on a student budget, and be sure to list all subtasks and the steps for the main task and each subtask.
+	2. Use problem decomposition to break down the task of deep-cleaning and organizing a shared dorm apartment, and be sure to list all subtasks and the steps for the main task and each subtask.
+	3. Use problem decomposition to break down organizing a one-day student club event, and be sure to list all subtasks and the steps for the main task and each subtask.
+	4. Use problem decomposition to break down preparing for three midterms in one week, and be sure to list all subtasks and the steps for the main task and each subtask.
+	5. Use problem decomposition to break down packing for a two-night road trip, and be sure to list all subtasks and the steps for the main task and each subtask.
+	6. Use problem decomposition to break down building and sticking to a fitness plan, and be sure to list all subtasks and the steps for the main task and each subtask.
+	7. Use problem decomposition to break down managing a part-time job alongside classes, and be sure to list all subtasks and the steps for the main task and each subtask.
+	8. Use problem decomposition to break down running an effective group study session, and be sure to list all subtasks and the steps for the main task and each subtask.
+	9. Use problem decomposition to break down planning a three-day drive to Salt Lake City, and be sure to list all subtasks and the steps for the main task and each subtask.
+	10. Use problem decomposition to break down shopping for a month’s groceries, and be sure to list all subtasks and the steps for the main task and each subtask.
+	11. Use problem decomposition to break down producing 60 cookies for a bake sale, and be sure to list all subtasks and the steps for the main task and each subtask.
+	12. Use problem decomposition to break down delivering a 10-minute class presentation, and be sure to list all subtasks and the steps for the main task and each subtask.
+	13. Use problem decomposition to break down coordinating a campus recycling drive, and be sure to list all subtasks and the steps for the main task and each subtask.
+	14. Use problem decomposition to break down creating a day-by-day study plan for five finals, and be sure to list all subtasks and the steps for the main task and each subtask.
+	15. Use problem decomposition to break down collecting clothing for a winter outreach, and be sure to list all subtasks and the steps for the main task and each subtask.
+	16. Use problem decomposition to break down tracking and controlling personal spending, and be sure to list all subtasks and the steps for the main task and each subtask.
+	17. Use problem decomposition to break down hosting a small friends’ dinner, and be sure to list all subtasks and the steps for the main task and each subtask.
+	18. Use problem decomposition to break down assembling a new desk and chair, and be sure to list all subtasks and the steps for the main task and each subtask.
+	19. Use problem decomposition to break down staying on top of laundry in a shared laundry room, and be sure to list all subtasks and the steps for the main task and each subtask.
+	20. Use problem decomposition to break down producing a 2-minute campus tour video, and be sure to list all subtasks and the steps for the main task and each subtask.
+
+B) Troubleshooting# Topic
+	1. def debug_task1(n):
+	    total = 0
+	    for i in range(1, n+1)
+	        total += i
+	    return total
+
+	2. def debug_task2(n):
+	    if n == 0:
+	        return 1
+	    else:
+	    return n * debug_task2(n-1)
+
+	3. def debug_task3(n):
+	    if n % 2 = 0:
+	        return True
+	    else:
+	        return False
+
+	4. def debug_task4(s)
+	    rev = ""
+	    for char in s:
+	         rev = char + rev
+	    return rev
+
+	5. def debug_task5(s):
+	    if s == s.reverse():
+	        return True
+	    else:
+	        return False
+
+	6. def debug_task6(lst):
+	    sorted_lst = lst.sort()
+	    return sorted_lst
+
+	7. def debug_task7(s):
+	    count = 0
+	    for char in s:
+	        if char in "aeiouAEIOU"
+	            count += 1
+	    return count
+
+	8. def debug_task8(lst):
+	    total = sum(lst)
+	    return total / len lst
+
+	9. def debug_task9(lst):
+	    max_val = 0
+	    for num in lst:
+	         if num > max:
+	            max_val = num
+	    return max_val
+
+	10. def debug_task10(base, exp):
+	    result = 1
+	    for i in range(exp)
+	        result *= base
+	    return result
+
+	11. def debug_task11(a, b):
+	    if a > b:
+	        return a - b
+	    else:
+	        return b - a
+	print(debug_difference(5, 3))
+
+	12. def debug_task12(lst1, lst2):
+	    return lst1 + lst2
+	print(debug_task12([1,2,3], [4,5,6])
+
+	13. def debug_task13(lst, item):
+	    count = 0
+	    for x in lst:
+	        if x == item
+	            count += 1
+	    return count
+
+	14. def debug_task14(lst):
+	    result = 1
+	    for num in lst:
+	        result += num
+	    return result
+
+	15. def debug_task15(s):
+	    words = s.split()
+	    return len(words
+
+	16. def debug_task16(n):
+	    total = 0
+	    for digit in str(n):
+	    total += int(digit)
+	    return total
+
+	17. def debug_task17(a, b):
+	    while b != 0:
+	        a, b = b, a % b
+	    return b
+
+	18. def debug_task18(s):
+	    return s.capitalise()
+
+	19. def debug_task19(n):
+	    if n < 2:
+	        return False
+	    for i in range(2, n)
+	        if n % i == 0:
+	            return False
+	    return True
+
+	20. def debug_task20(lst, sep):
+	    return sep.join(lst
+
+C) Sharing #Topic
+	1. Create a packaged library using flit that provides text analytics functions for sentiment analysis. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `nltk`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	2. Create a packaged library using flit that retrieves cryptocurrency prices from a public API. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `requests`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	3. Create a packaged library using flit that manages a to-do list with functionalities to add, remove, and prioritize tasks. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	4. Create a packaged library using flit that validates email addresses using advanced regular expressions. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `re`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	5. Create a packaged library using flit that computes statistical measures such as mean, median, and standard deviation from numerical data. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `numpy`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	6. Create a packaged library using flit that generates QR codes from text input. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `qrcode`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	7. Create a packaged library using flit that converts Markdown text to HTML. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `markdown`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	8. Create a packaged library using flit that performs various unit conversions (e.g., temperature, length, weight). Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	9. Create a packaged library using flit that generates data visualizations such as bar charts and line graphs. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `matplotlib`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	10. Create a packaged library using flit that logs messages with file rotation support. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	11. Create a packaged library using flit that simulates dice rolls for board games with customizable dice. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	12. Create a packaged library using flit that encrypts and decrypts text messages using modern cryptography standards. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `cryptography`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	13. Create a packaged library using flit that schedules tasks to run at specified intervals. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `schedule`. You may use AI to generate the code for the library, the unit tests, and the documentation.
+	14. Create a packaged library using flit that implements a simple caching mechanism for function calls. Include unit tests and documentation for all your functions. Also create a pyproject.toml file for the library. Use dependency `cachetools`. You may use AI to generate the code for the library, the unit tests, and the documentation.

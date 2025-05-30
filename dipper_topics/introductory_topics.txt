@@ -1,0 +1,34 @@
+A) Variables# Topic Name
+	1) Description: Variables in Erlang are immutable. Their type is determined by the Erlang runtime when they are set.
+	2) Why: Immutable variables allows the programmer to focus on the core of what is happening now. There is never any reason for the programmer to be worried that the variable may have changed since it was last used. 
+	3) When: Immutable variables makes doing concurrent programming in Erlang very much simpler than doing concurrent programming in languages that have mutable variables.
+
+B) Tuples# Topic Name
+	1) Description: Tuples are a way of grouping related pieces of data together. The internal piecies of data are accessed by decomposition.
+	2) Why: Tuples allow multiple pieces of data to be easily passed around in code. They use very few computational resources.
+	3) When: Tuples allow grouped data to be readily used in uncomplicated ways. They make it simpler to associate and use the grouped data.
+
+C) Lists# Topic Name
+	1) Description: Lists in Erlang are a fundamental part of Erlang and are immutable just like any other variable type. They are accessed one at a time from head to tail. New elements can be added to and removed from the head and the tail, though adding to and removing from the head is faster and uses less computational resources. 
+	2) Why: They are used to store ordered information.
+	3) When: If you need a stack, Erlang lists are definitely the way to go since they already have this behavior. Anytime you need ordered data, Erlang lists are a built-in way to do this.
+
+D) Functions# Topic Name
+	1) Description: Being a functional language, functions are a fundamental part of Erlang. They are first-order citizens. This is to say they are a data type and can be stored in variables and passed to functions as parameters. Erlang functions consist of a name with a set of parameters. The parameters are surrounded by the ( and ) characters. The -> keyword indicates what the function does. Erlang fucntions consist of independent clauses. These clauses must have the same name and number of parameters. Each clause has its own body. Clauses that make up an Erlang function are seperated by the ; character. When functions are called, Erlang does pattern matching to determine which clause matches the way the function was called. The pattern matching can be done only on the parameters listed in the clauses, or none, one, more, or all clauses may have a guard that is also used for pattern matching. The when keyword is used to indicate a guard. Like other functional programming languages, functions in Erlang should have no side-effects.
+	2) Why: Functions allow computation to be subdivided into segments that a programmer can reason about. This means they must be clearly written and short enough to comprehend all the lines of code in a single function at once. Since a function can be passed to other functions or stored in a varaible, they can be defined on-the-fly to allow the capture and use of variables that are in the current scope when the function is passed to another function. The keyword in Erlang for functions created on-the-fly is 'fun'. The generic industry term for funs is lambda.
+	3) When: Functions are how all code in Erlang is organized. There are no global variables, pointers, references, etc. since functions should have no side-effects in their code. Functions must always be used when writing Erlang.
+
+E) Stateless Processs# Topic Name
+	1) Description: Stateless processes are a fundamental part of Erlang. They are how programmers express the concept of 2 or more portions of code that can be running at once. Stateless processes do not retain information about what they have done before. Stateless processes have unique identifiers that are used to send them messages. The messages can be any valid Erlang type. The send operator, !, is used to send the message to the process.
+	2) Why: Stateless processes are used to fully leverage all the cores and CPUs that are part of a device. Without them, the device is not being used to its fullest extent.
+	3) When: All well engineered Erlang applications consist of many small processes. Therefore, instead of thinking of an application as an organized set of functions, Erlang applications should be thought of as an organized set of processes.
+
+F) Stateful Processs# Topic Name
+	1) Description: Stateful processes are a fundamental part of Erlang. They are how programmers express the concept of 2 or more portions of code that can be running at once. Stateful processes retain information about what they have done before. Stateful processes have unique identifiers that are used to send them messages. The messages can be any valid Erlang type. The send operator, !, is used to send the message to the process.
+	2) Why: Stateful processes are used to fully leverage all the cores and CPUs that are part of a device. Without them, the device is not being used to its fullest extent.
+	3) When: All well engineered Erlang applications consist of many small processes. Therefore, instead of thinking of an application as an organized set of functions, Erlang applications should be thought of as an organized set of processes.
+
+G) List BIFs# Topic Name
+	1) Description: List Built In Functions (BIFs) are a library of functions covering the most common things that can be done to a with lists.
+	2) Why: There is no reason to recreate some behavior that is very common. It is better to write the behavior once so it can be hardened much more rapidly. Using list BIFs also speeds up application development.
+	3) When: All well engineered Erlang applications should use list BIFs when they are available. Never attempt to replace then with something "better." Naive developers tend not to use the BIFs.
