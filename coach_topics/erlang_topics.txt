@@ -1,0 +1,526 @@
+A) Functions and Intent #Topic
+
+1. f1(0) -> 1;
+   f1(N) when N > 0 -> N * f1(N - 1).
+
+2. f2(0) -> 0;
+   f2(1) -> 1;
+   f2(N) when N > 1 -> f2(N - 1) + f2(N - 2).
+
+3. f3(N) when N rem 2 == 0 -> true;
+   f3(_) -> false.
+
+4. f4(0) -> a;
+   f4(N) when N > 0 -> b;
+   f4(_) -> c.
+
+5. f5([]) -> 0;
+   f5([H|T]) -> H + f5(T).
+
+6. f6(A, B) when A >= B -> A;
+   f6(_, B) -> B.
+
+7. f7(A) when A < 13 -> x;
+   f7(A) when A < 20 -> y;
+   f7(_) -> z.
+
+8. f8(foo) -> alpha;
+   f8(bar) -> beta;
+   f8(_) -> gamma.
+
+9. f9([]) -> 0;
+   f9([_|T]) -> 1 + f9(T).
+
+10. f10([X]) -> X;
+    f10([_|T]) -> f10(T).
+
+11. f11([$a|_]) -> true;
+    f11([_|_]) -> false;
+    f11([]) -> false.
+
+12. f12(N) when N >= 0 -> N;
+    f12(N) -> -N.
+
+13. f13(C) when $a =< C, C =< $z -> C - 32;
+    f13(C) -> C.
+
+14. f14(S) when S >= 90 -> a;
+    f14(S) when S >= 80 -> b;
+    f14(S) when S >= 70 -> c;
+    f14(_) -> d.
+
+15. f15(_, []) -> false;
+    f15(X, [X|_]) -> true;
+    f15(X, [_|T]) -> f15(X, T).
+
+16. f16(L) -> f16(L, []).
+    f16([], Acc) -> Acc;
+    f16([H|T], Acc) -> f16(T, [H|Acc]).
+
+17. f17([]) -> [];
+    f17([H|T]) when is_list(H) -> f17(H) ++ f17(T);
+    f17([H|T]) -> [H | f17(T)].
+
+18. f18(L) -> L =:= f16(L).
+
+19. f19(_, []) -> 0;
+    f19(X, [X|T]) -> 1 + f19(X, T);
+    f19(X, [_|T]) -> f19(X, T).
+
+20. f20(_, 0) -> {err, div0};
+    f20(A, B) -> {ok, A / B}.
+
+B) Variables #Topic
+
+1. X1 = 42.
+
+2. Y2 = [1, 2, 3].
+
+3. [A3, B3, C3] = [apple, banana, cherry].
+
+4. [Head4 | Tail4] = [5, 6, 7, 8].
+
+5. [_, Second5 | _] = [true, false, maybe].
+
+6. Num6 = 7,
+   IsEven6 = Num6 rem 2 == 0.
+
+7. [H7 | _] = [99, 100, 101].
+
+8. Flag8 = if
+             3 > 2 -> yes;
+             true -> no
+          end.
+
+9. Count9 = 5,
+   Total9 = Count9 + 10.
+
+10. [A10, B10] = [one, two].
+
+11. Match11 = case 10 of
+                N when N > 5 -> high;
+                _ -> low
+             end.
+
+12. List12 = [red, green, blue],
+    [First12 | _] = List12.
+
+13. Number13 = 3,
+    Result13 = if
+                 Number13 == 0 -> zero;
+                 Number13 < 0 -> negative;
+                 true -> positive
+              end.
+
+14. [_, _, Third14] = [ok, fine, great].
+
+15. Status15 = case false of
+                 true -> active;
+                 false -> inactive
+              end.
+
+16. [X16, Y16] = [8, 2],
+    Sum16 = X16 + Y16.
+
+17. Z17 = 20,
+    IsLarge17 = if
+                  Z17 > 50 -> true;
+                  true -> false
+                end.
+
+18. [Alpha18 | Rest18] = [x, y, z].
+
+19. Value19 = 100,
+    Half19 = Value19 div 2.
+
+20. Test20 = case 0 of
+               0 -> match;
+               _ -> no_match
+            end.
+
+C) Tuples #Topic
+
+1. T1 = {a, b}.
+
+2. {X2, Y2} = {hello, world}.
+
+3. {_, Middle3, _} = {left, center, right}.
+
+4. Tuple4 = {ok, 200},
+   {Status4, Code4} = Tuple4.
+
+5. {Name5, Age5} = {jane, 31}.
+
+6. T6 = {foo, bar, baz},
+   {A6, B6, _} = T6.
+
+7. Pair7 = {1, 2},
+   {First7, Second7} = Pair7.
+
+8. {A8, B8, C8} = {x, y, z}.
+
+9. {Value9, _} = {42, ignore}.
+
+10. T10 = {nested, {inner, value}}.
+
+11. Outer11 = {tuple, {another, one}},
+    {_, Inner11} = Outer11.
+
+12. Person12 = {name, "Sam"},
+    {name, N12} = Person12.
+
+13. {Left13, Right13} = {left, right}.
+
+14. Result14 = case {ok, 1} of
+                 {ok, _} -> success;
+                 _ -> fail
+              end.
+
+15. {A15, B15} = {true, false},
+    T15 = {B15, A15}.
+
+16. Original16 = {one, two, three},
+    {_, Second16, _} = Original16.
+
+17. {Word17, Length17} = {"cat", 3}.
+
+18. Entry18 = {id, 1001},
+    {_, ID18} = Entry18.
+
+19. {X19, X19} = {repeat, repeat}.
+
+20. Config20 = {mode, {debug, true}},
+    {_, {Flag20, State20}} = Config20.
+
+
+D) Lists and List BIFs #Topic
+
+1. A1 = [1, 2, 3].
+
+2. B2 = length([x, y, z]).
+
+3. C3 = hd([10, 20, 30]).
+
+4. D4 = tl([alpha, beta, gamma]).
+
+5. E5 = lists:reverse([a, b, c]).
+
+6. F6 = lists:sort([3, 1, 2]).
+
+7. G7 = [a, b] ++ [c, d].
+
+8. H8 = [1, 2, 3] -- [2].
+
+9. I9 = case [5, 6, 7] of
+          [_, 6, _] -> ok;
+          _ -> no
+       end.
+
+10. [J10 | K10] = [true, false, maybe].
+
+11. L11 = lists:duplicate(4, foo).
+
+12. M12 = [7, 8, 9],
+    N12 = M12 ++ [10].
+
+13. O13 = [X || X <- [1,2,3,4], X rem 2 == 0].
+
+14. P14 = [X * 3 || X <- [1, 2, 3]].
+
+15. Q15 = [[a], [b], [c]],
+    R15 = lists:flatten(Q15).
+
+16. [_, S16, _] = [red, green, blue].
+
+17. T17 = lists:last([5, 10, 15]).
+
+18. U18 = lists:zip([1, 2], [a, b]).
+
+19. V19 = lists:nth(3, [x, y, z, w]).
+
+20. W20 = lists:nthtail(2, [one, two, three, four]).
+
+
+E) Stateless Processes #Topic
+
+1. spawn(fun() -> ok end).
+
+2. spawn(fun() ->
+    receive
+        X -> X
+    end
+end).
+
+3. spawn(fun() ->
+    receive
+        {_, Y} -> Y
+    end
+end).
+
+4. spawn(fun() ->
+    receive
+        {A, B} -> A + B
+    end
+end).
+
+5. Pid5 = spawn(fun() ->
+    receive
+        hello -> ok
+    end
+end),
+Pid5 ! hello.
+
+6. Pid6 = spawn(fun() ->
+    receive
+        {From, Msg} -> From ! {ack, Msg}
+    end
+end),
+Pid6 ! {self(), test},
+receive
+    {ack, _} -> ok
+end.
+
+7. spawn(fun() ->
+    receive
+        stop -> ok
+    end
+end).
+
+8. spawn(fun() ->
+    receive
+        {a, _} -> done;
+        {b, _} -> skip
+    end
+end).
+
+9. spawn(fun() ->
+    receive
+        [_ | _] -> matched
+    end
+end).
+
+10. spawn(fun() ->
+    receive
+        _ -> ok
+    after 1000 ->
+        timeout
+    end
+end).
+
+11. spawn(fun() ->
+    receive
+        {_, _, Z} -> Z
+    end
+end).
+
+12. spawn(fun() ->
+    receive
+        true -> yes;
+        false -> no
+    end
+end).
+
+13. spawn(fun() ->
+    receive
+        X when is_atom(X) -> atom
+    end
+end).
+
+14. spawn(fun() ->
+    receive
+        {self, SelfPid} when is_pid(SelfPid) -> ok
+    end
+end).
+
+15. spawn(fun() ->
+    receive
+        {Ref, Data} -> Ref
+    end
+end).
+
+16. spawn(fun() ->
+    receive
+        <<"binary">> -> matched
+    end
+end).
+
+17. spawn(fun() ->
+    receive
+        _ -> ignore
+    after 0 ->
+        nothing
+    end
+end).
+
+18. spawn(fun() ->
+    receive
+        {_, _, _, _} -> four
+    end
+end).
+
+19. spawn(fun() ->
+    receive
+        [] -> empty
+    end
+end).
+
+20. spawn(fun() ->
+    receive
+        {_, X, _} when X > 10 -> big
+    end
+end).
+
+F) Stateful Processes #Topic
+
+1. spawn(fun() -> loop1(0) end).
+loop1(S) ->
+    receive
+        inc -> loop1(S + 1);
+        get -> io:format("~p~n", [S]), loop1(S)
+    end.
+
+2. spawn(fun() -> loop2([]) end).
+loop2(S) ->
+    receive
+        {add, X} -> loop2([X | S]);
+        show -> io:format("~p~n", [S]), loop2(S)
+    end.
+
+3. spawn(fun() -> loop3(none) end).
+loop3(S) ->
+    receive
+        {set, X} -> loop3(X);
+        get -> io:format("~p~n", [S]), loop3(S)
+    end.
+
+4. spawn(fun() -> loop4(0) end).
+loop4(S) ->
+    receive
+        {add, N} -> loop4(S + N);
+        {sub, N} -> loop4(S - N)
+    end.
+
+5. spawn(fun() -> loop5(ok) end).
+loop5(S) ->
+    receive
+        reset -> loop5(ok);
+        _ -> loop5(S)
+    end.
+
+6. spawn(fun() -> loop6([]) end).
+loop6(S) ->
+    receive
+        clear -> loop6([]);
+        {append, X} -> loop6(S ++ [X])
+    end.
+
+7. spawn(fun() -> loop7(0) end).
+loop7(S) ->
+    receive
+        {mul, N} -> loop7(S * N);
+        get -> io:format("~p~n", [S]), loop7(S)
+    end.
+
+8. spawn(fun() -> loop8(none) end).
+loop8(S) ->
+    receive
+        stop -> ok;
+        _ -> loop8(S)
+    end.
+
+9. spawn(fun() -> loop9([]) end).
+loop9(S) ->
+    receive
+        {push, X} -> loop9([X | S]);
+        {pop, From} ->
+            case S of
+                [H | T] -> From ! {ok, H}, loop9(T);
+                [] -> From ! empty, loop9(S)
+            end
+    end.
+
+10. spawn(fun() -> loop10(0) end).
+loop10(S) ->
+    receive
+        tick -> loop10(S + 1);
+        report -> io:format("~p~n", [S]), loop10(S)
+    end.
+
+11. spawn(fun() -> loop11(undefined) end).
+loop11(S) ->
+    receive
+        update -> loop11(self());
+        read -> io:format("~p~n", [S]), loop11(S)
+    end.
+
+12. spawn(fun() -> loop12(#{}) end).
+loop12(S) ->
+    receive
+        {put, K, V} -> loop12(maps:put(K, V, S));
+        {get, K, From} ->
+            From ! maps:get(K, S, undefined),
+            loop12(S)
+    end.
+
+13. spawn(fun() -> loop13(0) end).
+loop13(S) ->
+    receive
+        {set, X} -> loop13(X);
+        {cmp, X, From} ->
+            From ! (S == X),
+            loop13(S)
+    end.
+
+14. spawn(fun() -> loop14([]) end).
+loop14(S) ->
+    receive
+        {in, X, From} ->
+            From ! lists:member(X, S),
+            loop14(S);
+        {add, X} -> loop14([X | S])
+    end.
+
+15. spawn(fun() -> loop15(0) end).
+loop15(S) ->
+    receive
+        {op, N} when N > 0 -> loop15(S + N);
+        {op, N} -> loop15(S - N)
+    end.
+
+16. spawn(fun() -> loop16(#{count => 0}) end).
+loop16(S) ->
+    receive
+        inc -> loop16(S#{count := S.count + 1});
+        dec -> loop16(S#{count := S.count - 1});
+        val -> io:format("~p~n", [S.count]), loop16(S)
+    end.
+
+17. spawn(fun() -> loop17("") end).
+loop17(S) ->
+    receive
+        {add, C} -> loop17(S ++ C);
+        dump -> io:format("~s~n", [S]), loop17(S)
+    end.
+
+18. spawn(fun() -> loop18(undefined) end).
+loop18(S) ->
+    receive
+        exit -> ok;
+        Msg -> io:format("Unhandled: ~p~n", [Msg]), loop18(S)
+    end.
+
+19. spawn(fun() -> loop19(0) end).
+loop19(S) ->
+    receive
+        {mod, F} when is_function(F, 1) -> loop19(F(S));
+        peek -> io:format("~p~n", [S]), loop19(S)
+    end.
+
+20. spawn(fun() -> loop20(0) end).
+loop20(S) ->
+    receive
+        _ -> loop20(S + 1)
+    end.
+
+
+

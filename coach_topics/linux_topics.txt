@@ -1,0 +1,14 @@
+touch  #Topic
+Add User/Group  #Topic
+Pub/Priv  #Topic
+Keys #Topic 
+SSH #Topic
+cat #Topic
+head #Topic
+tail #Topic
+rm  #Topic
+apt #Topic
+ls  #Topic
+pwd #Topic
+mkdir #Topic
+cd #Topic

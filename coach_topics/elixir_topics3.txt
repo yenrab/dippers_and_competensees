@@ -1,0 +1,424 @@
+# Stateless Processes
+
+## 1
+```elixir
+spawn(fn -> :ok end)
+```
+
+## 2
+```elixir
+spawn(fn ->
+  receive do
+    x -> x
+  end
+end)
+```
+
+## 3
+```elixir
+spawn(fn ->
+  receive do
+    {_, y} -> y
+  end
+end)
+```
+
+## 4
+```elixir
+spawn(fn ->
+  receive do
+    {a, b} -> a + b
+  end
+end)
+```
+
+## 5
+```elixir
+pid5 = spawn(fn ->
+  receive do
+    :hello -> :ok
+  end
+end)
+
+send(pid5, :hello)
+```
+
+## 6
+```elixir
+pid6 = spawn(fn ->
+  receive do
+    {from, msg} -> send(from, {:ack, msg})
+  end
+end)
+
+send(pid6, {self(), :test})
+
+receive do
+  {:ack, _} -> :ok
+end
+```
+
+## 7
+```elixir
+spawn(fn ->
+  receive do
+    :stop -> :ok
+  end
+end)
+```
+
+## 8
+```elixir
+spawn(fn ->
+  receive do
+    {:a, _} -> :done
+    {:b, _} -> :skip
+  end
+end)
+```
+
+## 9
+```elixir
+spawn(fn ->
+  receive do
+    [_ | _] -> :matched
+  end
+end)
+```
+
+## 10
+```elixir
+spawn(fn ->
+  receive do
+    _ -> :ok
+  after
+    1000 -> :timeout
+  end
+end)
+```
+
+## 11
+```elixir
+spawn(fn ->
+  receive do
+    {_, _, z} -> z
+  end
+end)
+```
+
+## 12
+```elixir
+spawn(fn ->
+  receive do
+    true  -> :yes
+    false -> :no
+  end
+end)
+```
+
+## 13
+```elixir
+spawn(fn ->
+  receive do
+    x when is_atom(x) -> :atom
+  end
+end)
+```
+
+## 14
+```elixir
+spawn(fn ->
+  receive do
+    {:self, self_pid} when is_pid(self_pid) -> :ok
+  end
+end)
+```
+
+## 15
+```elixir
+spawn(fn ->
+  receive do
+    {ref, data} -> ref
+  end
+end)
+```
+
+## 16
+```elixir
+spawn(fn ->
+  receive do
+    <<"binary">> -> :matched
+  end
+end)
+```
+
+## 17
+```elixir
+spawn(fn ->
+  receive do
+    _ -> :ignore
+  after
+    0 -> :nothing
+  end
+end)
+```
+
+## 18
+```elixir
+spawn(fn ->
+  receive do
+    {_, _, _, _} -> :four
+  end
+end)
+```
+
+## 19
+```elixir
+spawn(fn ->
+  receive do
+    [] -> :empty
+  end
+end)
+```
+
+## 20
+```elixir
+spawn(fn ->
+  receive do
+    {_, x, _} when x > 10 -> :big
+  end
+end)
+```
+
+# Stateful Processes
+
+## 1
+```elixir
+loop1 = fn s ->
+  receive do
+    :inc -> loop1.(s + 1)
+    :get -> IO.inspect(s); loop1.(s)
+  end
+end
+spawn(fn -> loop1.(0) end)
+```
+
+## 2
+```elixir
+loop2 = fn s ->
+  receive do
+    {:add, x} -> loop2.([x | s])
+    :show     -> IO.inspect(s); loop2.(s)
+  end
+end
+spawn(fn -> loop2.([]) end)
+```
+
+## 3
+```elixir
+loop3 = fn s ->
+  receive do
+    {:set, x} -> loop3.(x)
+    :get      -> IO.inspect(s); loop3.(s)
+  end
+end
+spawn(fn -> loop3.(:none) end)
+```
+
+## 4
+```elixir
+loop4 = fn s ->
+  receive do
+    {:add, n} -> loop4.(s + n)
+    {:sub, n} -> loop4.(s - n)
+  end
+end
+spawn(fn -> loop4.(0) end)
+```
+
+## 5
+```elixir
+loop5 = fn s ->
+  receive do
+    :reset -> loop5.(:ok)
+    _      -> loop5.(s)
+  end
+end
+spawn(fn -> loop5.(:ok) end)
+```
+
+## 6
+```elixir
+loop6 = fn s ->
+  receive do
+    :clear       -> loop6.([])
+    {:append, x} -> loop6.(s ++ [x])
+  end
+end
+spawn(fn -> loop6.([]) end)
+```
+
+## 7
+```elixir
+loop7 = fn s ->
+  receive do
+    {:mul, n} -> loop7.(s * n)
+    :get      -> IO.inspect(s); loop7.(s)
+  end
+end
+spawn(fn -> loop7.(0) end)
+```
+
+## 8
+```elixir
+loop8 = fn s ->
+  receive do
+    :stop -> :ok
+    _     -> loop8.(s)
+  end
+end
+spawn(fn -> loop8.(:none) end)
+```
+
+## 9
+```elixir
+loop9 = fn s ->
+  receive do
+    {:push, x} -> loop9.([x | s])
+    {:pop, from} ->
+      case s do
+        [h | t] -> send(from, {:ok, h}); loop9.(t)
+        []      -> send(from, :empty);    loop9.(s)
+      end
+  end
+end
+spawn(fn -> loop9.([]) end)
+```
+
+## 10
+```elixir
+loop10 = fn s ->
+  receive do
+    :tick   -> loop10.(s + 1)
+    :report -> IO.inspect(s); loop10.(s)
+  end
+end
+spawn(fn -> loop10.(0) end)
+```
+
+## 11
+```elixir
+loop11 = fn s ->
+  receive do
+    :update -> loop11.(self())
+    :read   -> IO.inspect(s); loop11.(s)
+  end
+end
+spawn(fn -> loop11.(nil) end)
+```
+
+## 12
+```elixir
+loop12 = fn s ->
+  receive do
+    {:put, k, v}      -> loop12.(Map.put(s, k, v))
+    {:get, k, from} ->
+      send(from, Map.get(s, k, nil))
+      loop12.(s)
+  end
+end
+spawn(fn -> loop12.(%{}) end)
+```
+
+## 13
+```elixir
+loop13 = fn s ->
+  receive do
+    {:set, x}       -> loop13.(x)
+    {:cmp, x, from} ->
+      send(from, s == x)
+      loop13.(s)
+  end
+end
+spawn(fn -> loop13.(0) end)
+```
+
+## 14
+```elixir
+loop14 = fn s ->
+  receive do
+    {:in, x, from} ->
+      send(from, x in s)
+      loop14.(s)
+    {:add, x} ->
+      loop14.([x | s])
+  end
+end
+spawn(fn -> loop14.([]) end)
+```
+
+## 15
+```elixir
+loop15 = fn s ->
+  receive do
+    {:op, n} when n > 0 -> loop15.(s + n)
+    {:op, n}            -> loop15.(s - n)
+  end
+end
+spawn(fn -> loop15.(0) end)
+```
+
+## 16
+```elixir
+loop16 = fn s ->
+  receive do
+    :inc -> loop16.(Map.put(s, :count, Map.get(s, :count) + 1))
+    :dec -> loop16.(Map.put(s, :count, Map.get(s, :count) - 1))
+    :val -> IO.inspect(Map.get(s, :count)); loop16.(s)
+  end
+end
+spawn(fn -> loop16.(%{count: 0}) end)
+```
+
+## 17
+```elixir
+loop17 = fn s ->
+  receive do
+    {:add, c} -> loop17.(s <> c)
+    :dump     -> IO.puts(s); loop17.(s)
+  end
+end
+spawn(fn -> loop17.("") end)
+```
+
+## 18
+```elixir
+loop18 = fn s ->
+  receive do
+    :exit -> :ok
+    msg   -> IO.inspect({:unhandled, msg}); loop18.(s)
+  end
+end
+spawn(fn -> loop18.(nil) end)
+```
+
+## 19
+```elixir
+loop19 = fn s ->
+  receive do
+    {:mod, f} when is_function(f, 1) -> loop19.(f.(s))
+    :peek                           -> IO.inspect(s); loop19.(s)
+  end
+end
+spawn(fn -> loop19.(0) end)
+```
+
+## 20
+```elixir
+loop20 = fn s ->
+  receive do
+    _ -> loop20.(s + 1)
+  end
+end
+spawn(fn -> loop20.(0) end)
+```

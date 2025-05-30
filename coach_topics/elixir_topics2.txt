@@ -1,0 +1,229 @@
+# B) Variables #Topic
+
+1.
+x1 = 42
+
+2.
+y2 = [1, 2, 3]
+
+3.
+[a3, b3, c3] = [:apple, :banana, :cherry]
+
+4.
+[head4 | tail4] = [5, 6, 7, 8]
+
+5.
+[_, second5 | _] = [true, false, :maybe]
+
+6.
+num6 = 7
+is_even6 = rem(num6, 2) == 0
+
+7.
+[h7 | _] = [99, 100, 101]
+
+8.
+flag8 = if 3 > 2, do: :yes, else: :no
+
+9.
+count9 = 5
+total9 = count9 + 10
+
+10.
+[a10, b10] = [:one, :two]
+
+11.
+match11 = case 10 do
+  n when n > 5 -> :high
+  _             -> :low
+end
+
+12.
+list12 = [:red, :green, :blue]
+[first12 | _] = list12
+
+13.
+number13 = 3
+result13 =
+  if number13 == 0 do
+    :zero
+  else
+    if number13 < 0 do
+      :negative
+    else
+      :positive
+    end
+  end
+
+14.
+[_, _, third14] = [:ok, :fine, :great]
+
+15.
+status15 = case false do
+  true  -> :active
+  false -> :inactive
+end
+
+16.
+[x16, y16] = [8, 2]
+sum16 = x16 + y16
+
+17.
+z17 = 20
+is_large17 = if z17 > 50, do: true, else: false
+
+18.
+[alpha18 | rest18] = [:x, :y, :z]
+
+19.
+value19 = 100
+half19  = div(value19, 2)
+
+20.
+test20 = case 0 do
+  0 -> :match
+  _ -> :no_match
+end
+
+# C) Tuples #Topic
+
+1.
+t1 = {:a, :b}
+
+2.
+{x2, y2} = {:hello, :world}
+
+3.
+{_, middle3, _} = {:left, :center, :right}
+
+4.
+tuple4 = {:ok, 200}
+{status4, code4} = tuple4
+
+5.
+{name5, age5} = {:jane, 31}
+
+6.
+t6 = {:foo, :bar, :baz}
+{a6, b6, _} = t6
+
+7.
+pair7 = {1, 2}
+{first7, second7} = pair7
+
+8.
+{a8, b8, c8} = {:x, :y, :z}
+
+9.
+{value9, _} = {42, :ignore}
+
+10.
+t10 = {:nested, {:inner, :value}}
+
+11.
+outer11 = {:tuple, {:another, :one}}
+{_, inner11} = outer11
+
+12.
+person12 = {:name, "Sam"}
+{:name, n12} = person12
+
+13.
+{left13, right13} = {:left, :right}
+
+14.
+result14 = case {:ok, 1} do
+  {:ok, _} -> :success
+  _        -> :fail
+end
+
+15.
+{a15, b15} = {true, false}
+t15 = {b15, a15}
+
+16.
+original16 = {:one, :two, :three}
+{_, second16, _} = original16
+
+17.
+{word17, length17} = {"cat", 3}
+
+18.
+entry18 = {:id, 1001}
+{_, id18} = entry18
+
+19.
+{x19, x19} = {:repeat, :repeat}
+
+20.
+config20 = {:mode, {:debug, true}}
+{_, {flag20, state20}} = config20
+
+# D) Lists and List BIFs #Topic
+
+1.
+a1 = [1, 2, 3]
+
+2.
+b2 = length([:x, :y, :z])
+
+3.
+c3 = hd([10, 20, 30])
+
+4.
+d4 = tl([:alpha, :beta, :gamma])
+
+5.
+e5 = Enum.reverse([:a, :b, :c])
+
+6.
+f6 = Enum.sort([3, 1, 2])
+
+7.
+g7 = [:a, :b] ++ [:c, :d]
+
+8.
+h8 = [1, 2, 3] -- [2]
+
+9.
+i9 = case [5, 6, 7] do
+  [_, 6, _] -> :ok
+  _         -> :no
+end
+
+10.
+[j10 | k10] = [true, false, :maybe]
+
+11.
+l11 = List.duplicate(:foo, 4)
+
+12.
+m12 = [7, 8, 9]
+n12 = m12 ++ [10]
+
+13.
+o13 = for x <- [1, 2, 3, 4], rem(x, 2) == 0, do: x
+
+14.
+p14 = for x <- [1, 2, 3], do: x * 3
+
+15.
+q15 = [[:a], [:b], [:c]]
+r15 = List.flatten(q15)
+
+16.
+[_, s16, _] = [:red, :green, :blue]
+
+17.
+t17 = List.last([5, 10, 15])
+
+18.
+u18 = Enum.zip([1, 2], [:a, :b])
+
+19.
+v19 = Enum.at([:x, :y, :z, :w], 2)
+
+20.
+w20 = Enum.drop([:one, :two, :three, :four], 2)
+
+

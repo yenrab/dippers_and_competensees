@@ -1,0 +1,93 @@
+# A) Functions and Intent #Topic
+
+1.
+def f1(0), do: 1
+def f1(n) when n > 0, do: n * f1(n - 1)
+
+2.
+def f2(0), do: 0
+def f2(1), do: 1
+def f2(n) when n > 1, do: f2(n - 1) + f2(n - 2)
+
+3.
+def f3(n) when rem(n, 2) == 0, do: true
+def f3(_),        do: false
+
+4.
+def f4(0), do: :a
+def f4(n) when n > 0, do: :b
+def f4(_),           do: :c
+
+5.
+def f5([]),       do: 0
+def f5([h | t]),  do: h + f5(t)
+
+6.
+def f6(a, b) when a >= b, do: a
+def f6(_, b),           do: b
+
+7.
+def f7(a) when a < 13, do: :x
+def f7(a) when a < 20, do: :y
+def f7(_),             do: :z
+
+8.
+def f8(:foo), do: :alpha
+def f8(:bar), do: :beta
+def f8(_),    do: :gamma
+
+9.
+def f9([]),       do: 0
+def f9([_ | t]),  do: 1 + f9(t)
+
+10.
+def f10([x]),      do: x
+def f10([_ | t]),  do: f10(t)
+
+11.
+def f11([?a | _]), do: true
+def f11([_ | _]),  do: false
+def f11([]),       do: false
+
+12.
+def f12(n) when n >= 0, do: n
+def f12(n),           do: -n
+
+13.
+def f13(c) when c in ?a..?z, do: c - 32
+def f13(c),                 do: c
+
+14.
+def f14(s) when s >= 90, do: :a
+def f14(s) when s >= 80, do: :b
+def f14(s) when s >= 70, do: :c
+def f14(_),             do: :d
+
+15.
+def f15(_, []),       do: false
+def f15(x, [x | _]),  do: true
+def f15(x, [_ | t]),  do: f15(x, t)
+
+16.
+def f16(l),               do: f16(l, [])
+def f16([], acc),         do: acc
+def f16([h | t], acc),    do: f16(t, [h | acc])
+
+17.
+def f17([]),                      do: []
+def f17([h | t]) when is_list(h), do: f17(h) ++ f17(t)
+def f17([h | t]),                 do: [h | f17(t)]
+
+18.
+def f18(l), do: l == f16(l)
+
+19.
+def f19(_, []),        do: 0
+def f19(x, [x | t]),   do: 1 + f19(x, t)
+def f19(x, [_ | t]),   do: f19(x, t)
+
+20.
+def f20(_, 0),       do: {:err, :div0}
+def f20(a, b),       do: {:ok, a / b}
+
+

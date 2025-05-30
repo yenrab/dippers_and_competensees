@@ -1,0 +1,410 @@
+A) Functions and Intent #Topic
+	 1. def func1(first_number, second_number):
+    return first_number + second_number
+
+ 2. def func2(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+ 3. def func3(start_value, end_value):
+    number_list = []
+    current_number = start_value
+    while current_number <= end_value:
+        number_list.append(current_number)
+        current_number += 1
+    return number_list
+
+ 4. def func4(number):
+    factorial_result = 1
+    current_factor = 1
+    while current_factor <= number:
+        factorial_result = factorial_result * current_factor
+        current_factor += 1
+    return factorial_result
+
+ 5. def func5(position):
+    if position == 1:
+        return 0
+    elif position == 2:
+        return 1
+    previous_value = 0
+    current_value = 1
+    index = 2
+    while index < position:
+        next_value = previous_value + current_value
+        previous_value = current_value
+        current_value = next_value
+        index += 1
+    return current_value
+
+ 6. def func6(input_string):
+    reversed_string = ""
+    index = len(input_string) - 1
+    while index >= 0:
+        reversed_string = reversed_string + input_string[index]
+        index -= 1
+    return reversed_string
+
+ 7. def func7(input_string):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    for character in input_string:
+        if character in vowels:
+            vowel_count += 1
+    return vowel_count
+
+ 8. def func8(number_list):
+    maximum_value = number_list[0]
+    index = 1
+    while index < len(number_list):
+        if number_list[index] > maximum_value:
+            maximum_value = number_list[index]
+        index += 1
+    return maximum_value
+
+ 9. def func9(input_string, character):
+    letter_count = 0
+    for letter in input_string:
+        if letter == character:
+            letter_count += 1
+    return letter_count
+
+ 10. def func10(number):
+    if number <= 1:
+        return False
+    divisor = 2
+    while divisor < number:
+        if number % divisor == 0:
+            return False
+        divisor += 1
+    return True
+
+ 11. def func11(number):
+    multiplication_table = []
+    multiplier = 1
+    while multiplier <= 10:
+        multiplication_table.append(number * multiplier)
+        multiplier += 1
+    return multiplication_table
+
+ 12. def func12(number):
+    digit_sum = 0
+    while number > 0:
+        digit_sum = digit_sum + (number % 10)
+        number = number // 10
+    return digit_sum
+
+ 13. def func13(input_string):
+    left_index = 0
+    right_index = len(input_string) - 1
+    while left_index < right_index:
+        if input_string[left_index] != input_string[right_index]:
+            return False
+        left_index += 1
+        right_index -= 1
+    return True
+
+ 16. def func16(max_number):
+    even_numbers = []
+    current_number = 1
+    while current_number <= max_number:
+        if current_number % 2 == 0:
+            even_numbers.append(current_number)
+        current_number += 1
+    return even_numbers
+
+ 17. def func17(sentence):
+    word_list = sentence.split(" ")
+    word_count = 0
+    for word in word_list:
+        if word != "":
+            word_count += 1
+    return word_count
+
+ 18. def func18(list_one, list_two):
+    common_items = []
+    for item in list_one:
+        if item in list_two and item not in common_items:
+            common_items.append(item)
+    return common_items
+
+ 19. def func19(count):
+    primes = []
+    candidate = 2
+    while len(primes) < count:
+        if func10(candidate):
+            primes.append(candidate)
+        candidate += 1
+    return primes
+
+ 20. def func20(base_value, exponent):
+    power_result = 1
+    counter = 0
+    while counter < exponent:
+        power_result = power_result * base_value
+        counter += 1
+    return power_result
+
+B) Function Details #Topic
+
+  1. def func1(*strings, sep=" "):
+    result_string = ""
+    for index, string in enumerate(strings):
+        if index > 0:
+            result_string += sep
+        result_string += string
+    return result_string
+
+  2. def func2(*numbers, factor=1):
+    scaled_numbers = []
+    for number in numbers:
+        scaled_numbers.append(number * factor)
+    return scaled_numbers
+
+  3. def func3(*numbers):
+    total_sum = 0
+    count_numbers = 0
+    for number in numbers:
+        total_sum += number
+        count_numbers += 1
+    if count_numbers == 0:
+        return 0
+    return total_sum / count_numbers
+
+  4. def func4(input_string, letters="aeiou"):
+    vowel_count = 0
+    for character in input_string:
+        if character.lower() in letters:
+            vowel_count += 1
+    return vowel_count
+
+  5. def func5(number_list, threshold=10):
+    filtered_numbers = []
+    for number in number_list:
+        if number > threshold:
+            filtered_numbers.append(number)
+    return filtered_numbers
+
+  6. def func6(*numbers):
+    def compute_factorial(n):
+        factorial_result = 1
+        for i in range(1, n + 1):
+            factorial_result *= i
+        return factorial_result
+    factorials = []
+    for number in numbers:
+        factorials.append(compute_factorial(number))
+    return factorials
+
+  7. def func7(*strings):
+    longest_string = ""
+    for string in strings:
+        if len(string) > len(longest_string):
+            longest_string = string
+    return longest_string
+
+  8. def func8(*numbers):
+    if not numbers:
+        return None
+    maximum_value = numbers[0]
+    for number in numbers:
+        if number > maximum_value:
+            maximum_value = number
+    return maximum_value
+
+  9. def func9(input_string, repetitions=3):
+    result_string = ""
+    for i in range(repetitions):
+        result_string += input_string
+        if i < repetitions - 1:
+            result_string += " "
+    return result_string
+
+  10. def func10(*numbers):
+    def check_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        return True
+    prime_numbers = []
+    for number in numbers:
+        if check_prime(number):
+            prime_numbers.append(number)
+    return prime_numbers
+
+  11. def func11(*numbers):
+    even_sum = 0
+    for number in numbers:
+        if number % 2 == 0:
+            even_sum += number
+    return even_sum
+
+  12. def func12(start, end, step=2):
+    number_list = []
+    current_number = start
+    while current_number <= end:
+        number_list.append(current_number)
+        current_number += step
+    return number_list
+
+  13. def func13(*numbers):
+    if not numbers:
+        return None
+    maximum_value = numbers[0]
+    for number in numbers:
+        if number > maximum_value:
+            maximum_value = number
+    return maximum_value
+
+  14. def func14(input_string, minimum_length=4):
+    word_list = input_string.split()
+    long_words = []
+    for word in word_list:
+        if len(word) > minimum_length:
+            long_words.append(word)
+    return long_words
+
+  15. def func15(*numbers):
+    if not numbers:
+        return 0
+    maximum_value = numbers[0]
+    minimum_value = numbers[0]
+    for number in numbers:
+        if number > maximum_value:
+            maximum_value = number
+        if number < minimum_value:
+            minimum_value = number
+    return maximum_value - minimum_value
+
+  16. def func16(*lists):
+    if not lists:
+        return []
+    common_elements = lists[0]
+    for current_list in lists[1:]:
+        temp_common = []
+        for element in common_elements:
+            if element in current_list and element not in temp_common:
+                temp_common.append(element)
+        common_elements = temp_common
+    return common_elements
+
+  17. def func17(number, divisor_start=1):
+    divisors = []
+    current_divisor = divisor_start
+    while current_divisor <= number:
+        if number % current_divisor == 0:
+            divisors.append(current_divisor)
+        current_divisor += 1
+    return divisors
+
+  18. def func18(*strings, vowels_to_remove="aeiouAEIOU"):
+    modified_strings = []
+    for input_string in strings:
+        result_string = ""
+        for character in input_string:
+            if character not in vowels_to_remove:
+                result_string += character
+        modified_strings.append(result_string)
+    return modified_strings
+
+  19. def func19(*numbers, divisor_start=1):
+    perfect_flags = []
+    for number in numbers:
+        divisor_sum = 0
+        current_divisor = divisor_start
+        while current_divisor < number:
+            if number % current_divisor == 0:
+                divisor_sum += current_divisor
+            current_divisor += 1
+        perfect_flags.append(divisor_sum == number)
+    return perfect_flags
+
+  20. def func20(number_list, reverse_order=False):
+    sorted_list = number_list[:]
+    n = len(sorted_list)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if reverse_order:
+                if sorted_list[j] < sorted_list[j + 1]:
+                    sorted_list[j], sorted_list[j + 1] = sorted_list[j + 1], sorted_list[j]
+            else:
+                if sorted_list[j] > sorted_list[j + 1]:
+                    sorted_list[j], sorted_list[j + 1] = sorted_list[j + 1], sorted_list[j]
+    return sorted_list
+
+C) Using BIFs #Topic
+
+  1. def func1(numbers):
+    return (len(numbers), sorted(numbers))
+
+  2. def func2(numbers):
+    return (min(numbers), max(numbers))
+
+  3. def func3(strings):
+    return list(map(len, strings))
+
+  4. def func4(numbers):
+    return sorted(set(numbers))
+
+  5. def func5(numbers):
+    total = sum(numbers)
+    count = len(numbers)
+    return total / count if count != 0 else 0
+
+  6. def func6(s):
+    return (list(s), len(s))
+
+  7. def func7(start, end):
+    number_range = list(range(start, end))
+    return (number_range, sum(number_range))
+
+  8. def func8(lst):
+    return (list(reversed(lst)), len(lst))
+
+  9. def func9(dictionary):
+    return (sorted(dictionary.keys()), list(dictionary.values()))
+
+  10. def func10(numbers):
+    even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+    return (len(even_numbers), sum(even_numbers))
+
+  11. def func11(s):
+    words = s.split()
+    return (sorted(words), len(words))
+
+  12. def func12(lst):
+    return (max(lst, default=0), min(lst, default=0))
+
+  13. def func13(numbers):
+    squared_numbers = list(map(lambda x: x * x, numbers))
+    return (squared_numbers, sum(squared_numbers))
+
+  14. def func14(s):
+    unique_chars = set(s)
+    return (sorted(unique_chars), len(unique_chars))
+
+  15. def func15(dictionary):
+    return (list(dictionary.items()), sorted(dictionary.values()))
+
+  16. def func16(lst):
+    return (list(enumerate(lst)), len(lst))
+
+  17. def func17(lst):
+    positive_numbers = list(filter(lambda x: x > 0, lst))
+    return (positive_numbers, sum(positive_numbers))
+
+  18. def func18(s):
+    frequencies = {char: s.count(char) for char in set(s)}
+    return (sorted(frequencies.items()), len(frequencies))
+
+  19. def func19(lst):
+    return list(reversed(sorted(lst)))
+
+  20. def func20(numbers):
+    numbers_list = list(numbers)
+    average = sum(numbers_list) / len(numbers_list) if len(numbers_list) > 0 else 0
+    return (tuple(numbers_list), average)
